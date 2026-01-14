@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Si le fichier ou le dossier demandé existe (ex: une image, un CSS), on l'affiche normalement
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Sinon, on redirige tout vers index.php
+RewriteRule ^ index.php [L]

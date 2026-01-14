@@ -2,9 +2,9 @@
     "name": "app/controle",
     "autoload": {
         "psr-4": {
-            "App\\": "src/",
-            "App\\Controller\\": "src/controllers/",
-            "App\\Model\\": "src/models/"
+            "App\\": "app/",
+            "App\\Controller\\": "app/controllers/",
+            "App\\Model\\": "app/models/"
         }
     },
     "authors": [

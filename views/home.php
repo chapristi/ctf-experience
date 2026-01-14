@@ -14,9 +14,9 @@
     </header>
 
     <main>
-        <form action="/login" method="POST">
-            <label for="username">Nom de code :</label>
-            <input type="text" id="username" name="username" placeholder="Entrez votre pseudo" required autocomplete="off">
+        <form action="" method="" class="loginForm" id="loginForm">
+            <label for="nickname">Nom de code :</label>
+            <input type="text" id="nickname" name="nickname" placeholder="Entrez votre pseudo" required autocomplete="off">
             <button type="submit">Commencer la mission</button>
         </form>
         <?php
@@ -31,4 +31,33 @@
     </footer>
 </div>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#loginForm').on('submit', function(e) {
+                e.preventDefault();
+
+                const nickname = $('#nickname').val();
+
+                $.ajax({
+                    url: '/api/login',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ nickname: nickname }),
+                    success: function(response) {
+                        if (response.success) {
+                            window.location.href = "/api/challenges";
+                        } else {
+                            $('#messageBox').html('<p class="error-message">' + response.message + '</p>');
+                        }
+                    },
+                    error: function(xhr) {
+                        const errorMsg = xhr.responseJSON ? xhr.responseJSON.error : 'Une erreur est survenue.';
+                        $('#messageBox').html('<p class="error-message">' + errorMsg + '</p>');
+                    }
+                });
+            });
+        });
+    </script>
 </html>

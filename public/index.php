@@ -9,16 +9,23 @@ if (session_status() == PHP_SESSION_NONE) {
 
 require '../vendor/autoload.php';
 
+$db = new PDO("mysql:host=db;dbname=my_database;charset=utf8mb4", "user", "user_password");
+
 $router = new AltoRouter();
 
-$router->map('GET', '/', function() {
-    require __DIR__ . '/../views/home.php';
-});
-$router->map('GET', '/challenges', function() {
-    require __DIR__ . '/../views/challenges.php';
-});
-$router->map('GET', '/scoreboard', function() {
-    require __DIR__ . '/../views/scoreboard.php';
+// Views
+$router->map('GET', '/', function() { require __DIR__ . '/../views/home.php'; });
+$router->map('GET', '/challenges', function() { require __DIR__ . '/../views/challenges.php'; });
+$router->map('GET', '/scoreboard', function() { require __DIR__ . '/../views/scoreboard.php'; });
+
+// API
+$router->map('POST', '/api/login', function() use ($db) { (new \App\Controller\AuthController($db))->login(); });
+$router->map('GET', '/api/challenges', function() use ($db) { (new \App\Controller\ChallengeController($db))->index(); });
+$router->map('POST', '/api/challenges/submit', function() use ($db) { (new \App\Controller\ChallengeController($db))->submit(); });
+$router->map('GET', '/api/scoreboard', function() use ($db) {
+    $repo = new \App\Model\UserRepository($db);
+    header('Content-Type: application/json');
+    echo json_encode($repo->getScoreboard());
 });
 
 $match = $router->match();

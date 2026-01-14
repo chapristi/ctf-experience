@@ -16,10 +16,4 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 
 COPY . /var/www/html/
 
-<<<<<<< HEAD
 EXPOSE 8888
-=======
-RUN chown -R www-data:www-data /var/www/html
-
-EXPOSE 80
->>>>>>> 5c7a5fc0978cef1559f89d87158c8200488d8916

@@ -1,17 +1,19 @@
+DROP DATABASE IF EXISTS my_database;
 CREATE DATABASE IF NOT EXISTS my_database;
 USE my_database;
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nickname VARCHAR(50) NOT NULL UNIQUE,
-    password_hash VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    score int default 0
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS challenges (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
     description TEXT,
+    picture TEXT,
     points INT DEFAULT 0,
     flag VARCHAR(255) NOT NULL,
     category VARCHAR(50),
@@ -28,10 +30,10 @@ CREATE TABLE IF NOT EXISTS solves (
     UNIQUE KEY unique_solve (user_id, challenge_id)
 ) ENGINE=InnoDB;
 
-INSERT INTO users (nickname, email, password_hash) VALUES 
-('Neo', 'hash_exemplo_1'),
-('Trinity', 'hash_exemplo_2'),
-('Cypher', 'hash_exemplo_3');
+INSERT INTO users (nickname) VALUES 
+('Neo'),
+('Trinity'),
+('Cypher');
 
 INSERT INTO challenges (title, description, points, flag, category) VALUES 
 ('Porta Aberta', 'Encontra a flag no código fonte da página.', 100, 'CTF{view_source_is_key}', 'Web'),

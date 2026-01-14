@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $router = new AltoRouter();
 

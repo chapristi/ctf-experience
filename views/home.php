@@ -1,38 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF - Page d'Accueil</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 <body>
-<?php if (isset($_SESSION['id'])) :?>
-    <div class="mt-4" style="width: 100%">
-        <h1 class="text-center">Liste des Publications</h1>
-        <div class="" style="width: 100%">
-            <?php foreach ($posts as $post): ?>
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-header text-black">
-                            <h4><?= htmlspecialchars($post['titre']); ?></h4>
-                        </div>
-                        <div class="card-body">
-                            <p><?= htmlspecialchars($post['contenu']); ?></p>
-                        </div>
-                        <div class="text-center">
-                            <small>
-                                Publié par <strong><?= htmlspecialchars($post['nom']); ?></strong>
-                                le <?= date('d/m/Y H:i', strtotime($post['date_publication'])); ?>
-                            </small>
-                            <br>
+<div class="container">
+    <header>
+        <h1>Bienvenue, Agent !</h1>
+        <p>Ton intelligence sera mise à l'épreuve.</p>
+    </header>
 
-                            <a class="btn btn-primary text-center" href="?url=posts&a=afficher&id=<?= $post['id_post']?>">
-                                voir plus
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-<?php else: ?>
-    <div class="container mt-5">
-        <div class="alert alert-danger">
-            Vous devez être connecté pour accéder aux publications
-        </div>
-    </div>
-<?php endif; ?>
+    <main>
+        <form action="/login" method="POST">
+            <label for="username">Nom de code :</label>
+            <input type="text" id="username" name="username" placeholder="Entrez votre pseudo" required autocomplete="off">
+            <button type="submit">Commencer la mission</button>
+        </form>
+        <?php
+        if (isset($_GET['error']) && $_GET['error'] == 'invalid') {
+            echo '<p class="error-message">Nom de code inconnu ou invalide.</p>';
+        }
+        ?>
+    </main>
 
+    <footer>
+        <p>&copy; 2025 Opération Chimère</p>
+    </footer>
+</div>
+</body>
+</html>

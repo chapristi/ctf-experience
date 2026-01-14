@@ -23,5 +23,17 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - MYSQL_ROOT_PASSWORD=root_password
+    depends_on:
+      - db
+
 volumes:
   db_data:

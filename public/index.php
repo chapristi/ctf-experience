@@ -20,6 +20,11 @@ $router->map('GET', '/', function() { require __DIR__ . '/../views/home.php'; })
 $router->map('GET', '/click-frenzy', function() { require __DIR__ . '/../views/click_frenzy/clik_frenzy.php'; });
 $router->map('GET,POST', '/keep-your-life-private', function() { require __DIR__ . '/../views/keep_your_life_private/keep_your_life_private.php'; });
 $router->map('GET', '/not-secure-login', function() { require __DIR__ . '/../views/not_secure_login/not_secure_login.php'; });
+//HIDDEN_IN_PLAIN_SIGHT
+$router->map('GET, POST', '/hidden_in_plain_sight', function() { require __DIR__ . '/../views/hidden_in_plain_sight/login.php'; });
+$router->map('GET', '/hidden_in_plain_sight/desktop', function() {
+    require __DIR__ . '/../views/hidden_in_plain_sight/desktop.php';
+});
 
 // API
 $router->map('POST', '/auth/login', function() use ($db) { (new \App\Controller\AuthController($db))->login(); });

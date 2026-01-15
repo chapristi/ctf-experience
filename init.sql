@@ -17,6 +17,8 @@ CREATE TABLE IF NOT EXISTS challenges (
     points INT DEFAULT 0,
     flag VARCHAR(255) NOT NULL,
     category VARCHAR(50),
+    slug VARCHAR(100) NOT NULL,
+    hint TEXT NOT NULL,
     is_active BOOLEAN DEFAULT TRUE
 ) ENGINE=InnoDB;
 
@@ -35,10 +37,10 @@ INSERT INTO users (nickname) VALUES
 ('Trinity'),
 ('Cypher');
 
-INSERT INTO challenges (title, description, points, flag, category) VALUES 
-('Porta Aberta', 'Encontra a flag no código fonte da página.', 100, 'CTF{view_source_is_key}', 'Web'),
-('Cifra de César', 'Descodifica: PHQVDJHP', 150, 'CTF{mensagem_secreta}', 'Crypto'),
-('Binary Search', 'Explora o buffer overflow.', 300, 'CTF{pwn_the_stack}', 'Pwn');
+INSERT INTO challenges (title, description, points, flag, category, picture) VALUES 
+('Porta Aberta', 'Encontra a flag no código fonte da página.', 100, 'CTF{view_source_is_key}', 'Web', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDZwcXg2eXN4Yzd2NHlrYno1OTZpODNvYTZvMHdteHN3NHN4b2ZjOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/A1oBMukTqFfkoY1HiH/giphy.gif'),
+('Cifra de César', 'Descodifica: PHQVDJHP', 150, 'CTF{mensagem_secreta}', 'Crypto', 'https://media1.tenor.com/m/0P2I-Z4sFB0AAAAC/key-magic-key.gif'),
+('Binary Search', 'Explora o buffer overflow.', 300, 'CTF{pwn_the_stack}', 'Pwn', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMW5tcTdxYnZjOXkyOWZ6emQ3OTE1aW50Y3R6ZnJvdWR3dTR3bXg1cCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/gq8bvfkh2EIZAnntsc/giphy.gif');
 
 INSERT INTO solves (user_id, challenge_id) VALUES 
 (1, 1),

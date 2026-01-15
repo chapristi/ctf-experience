@@ -26,7 +26,7 @@ $router->map('POST', '/api/login', function() use ($db) { (new \App\Controller\A
 $router->map('GET', '/api/challenges', function() use ($db) { (new \App\Controller\ChallengeController($db))->index(); });
 $router->map('POST', '/api/challenges/submit', function() use ($db) { (new \App\Controller\ChallengeController($db))->submit(); });
 $router->map('GET', '/api/scoreboard', function() use ($db) {
-    $repo = new \App\Model\UserRepository($db);
+    $repo = new \App\Repository\UserRepository($db);
     header('Content-Type: application/json');
     echo json_encode($repo->getScoreboard());
 });

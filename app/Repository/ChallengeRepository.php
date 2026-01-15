@@ -13,7 +13,7 @@ class ChallengeRepository {
 
     public function getChallenge($id){
         $request = $this->db->query("SELECT id, title, description, points, category, picture FROM challenges WHERE is_active = 1 and id = $id");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $request->fetch(PDO::FETCH_ASSOC);
     }
 
     public function verifyFlag(int $id, string $flag): bool {

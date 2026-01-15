@@ -1,4 +1,4 @@
-<?php
+<?php/*
 $challenge = [
     "title" => "OPSEC Fail : Le Rapport",
     "category" => "Osint",
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $error = true;
     }
-}
+}*/
 ?>
 
 <!DOCTYPE html>

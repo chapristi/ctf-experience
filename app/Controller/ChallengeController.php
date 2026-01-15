@@ -19,10 +19,10 @@ class ChallengeController extends BaseController{
         $this->render('challenges', ['challenges' => $data]);
     }
 
-    public function challenge_details(){
+    public function challengeDetails(){
         $id = $_POST['challenge_id'];
-
-        $data = $this->crepo->get
+        $data = $this->crepo->getChallenge($id);
+        $this->render('challenge_details', ['challenge' => $data]);
     }
 
     public function submit() {

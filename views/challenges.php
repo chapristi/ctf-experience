@@ -1,5 +1,5 @@
 <?php
-$challenges = [
+/*$challenges = [
     [
         "title" => "Pas si inconnu...",
         "category" => "Osint",
@@ -18,7 +18,7 @@ $challenges = [
         "points" => 500,
         "gif" => "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMW5tcTdxYnZjOXkyOWZ6emQ3OTE1aW50Y3R6ZnJvdWR3dTR3bXg1cCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/gq8bvfkh2EIZAnntsc/giphy.gif"
     ]
-];
+];*/
 ?>
 
 <!DOCTYPE html>
@@ -161,7 +161,7 @@ $challenges = [
 <div class="grid">
     <?php foreach ($challenges as $item): ?>
         <div class="card">
-            <img src="<?= $item['gif'] ?>" alt="Mission GIF">
+            <img src="<?= $item['picture'] ?>" alt="Mission GIF">
             <div>
                 <span class="category"><?= $item['category'] ?></span>
             </div>

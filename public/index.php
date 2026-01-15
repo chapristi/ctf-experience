@@ -20,6 +20,7 @@ $router->map('GET', '/scoreboard', function() { require __DIR__ . '/../views/sco
 $router->map('GET', '/click-frenzy', function() { require __DIR__ . '/../views/click_frenzy/clik_frenzy.php'; });
 $router->map('GET,POST', '/keep-your-life-private', function() { require __DIR__ . '/../views/keep_your_life_private/keep_your_life_private.php'; });
 $router->map('GET', '/challenge_details', function() { require __DIR__ . '/../views/challenge_details.php'; });
+$router->map('GET', '/not-secure-login', function() { require __DIR__ . '/../views/not_secure_login/not_secure_login.php'; });
 
 // API
 $router->map('POST', '/api/login', function() use ($db) { (new \App\Controller\AuthController($db))->login(); });

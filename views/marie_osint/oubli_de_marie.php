@@ -186,7 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vault_pass'])) {
                         <div><strong>Marie Laurent</strong><br><small>10 janvier 2023 • 🌎</small></div>
                     </div>
                     <div class="post-text">
-                        Un immense merci pour tous vos messages ! Je n'arrive pas à croire que j'ai déjà <strong>35 ans</strong> aujourd'hui... La vie commence maintenant ! 🎂🥂
+                        Un immense merci pour tous vos messages ! Je n'arrive pas à croire que j'ai déjà 30 ans aujourd'hui... La vie commence maintenant ! 🎂🥂
                     </div>
                     <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=600" class="post-img">
                     <div class="post-actions">❤️ 256 J'aime • 48 Commentaires</div>

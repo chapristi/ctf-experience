@@ -28,18 +28,13 @@ class UserRepository {
     }
 
     public function getScoreboard(): array {
-        $sql = "SELECT u.id, u.nickname, COALESCE(SUM(c.points), 0) AS total_score
+        $sql = "SELECT u.id, u.nickname, u.score,
+                (SELECT COUNT(*) FROM solves s WHERE s.user_id = u.id) as solve_count
                 FROM users u
-                LEFT JOIN solves s ON u.id = s.user_id
-                LEFT JOIN challenges c ON s.challenge_id = c.id
-                GROUP BY u.id
-                ORDER BY total_score DESC";
+                ORDER BY u.score DESC, u.nickname ASC";
+                
         $stmt = $this->db->query($sql);
-        $users = [];
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $users[] = new User($row);
-        }
-        return $users;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function processChallengeSolve(int $userId, int $challengeId): bool {

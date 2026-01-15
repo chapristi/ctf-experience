@@ -1,13 +1,3 @@
-<?php
-$scores = [
-    ["rank" => 1, "pseudo" => "ShadowHacker", "challenges" => 12, "points" => 2450],
-    ["rank" => 2, "pseudo" => "Ghost_Root", "challenges" => 10, "points" => 1900],
-    ["rank" => 3, "pseudo" => "NullPointer", "challenges" => 9, "points" => 1750],
-    ["rank" => 4, "pseudo" => "Admin_Killer", "challenges" => 7, "points" => 1200],
-    ["rank" => 5, "pseudo" => "Guest_User", "challenges" => 2, "points" => 150],
-];
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -111,14 +101,21 @@ $scores = [
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($scores as $user): ?>
-            <tr>
-                <td><span class="rank-badge"><?= $user['rank'] ?></span></td>
-                <td><span class="pseudo"><?= $user['pseudo'] ?></span></td>
-                <td class="challenges-resolved"><?= $user['challenges'] ?></td>
-                <td class="points-total"><?= $user['points'] ?> PTS</td>
-            </tr>
-        <?php endforeach; ?>
+            <?php $rank = 1; ?>
+            <?php foreach ($users as $user): ?>
+                <tr>
+                    <td><span class="rank-badge"><?= $rank ?></span></td>
+                    
+                    <td><span class="pseudo"><?= htmlspecialchars($user['nickname']) ?></span></td>
+                    
+                    <td class="challenges-resolved">
+                        <?= $user->solve_count ?? 'N/A' ?>
+                    </td>
+                    
+                    <td class="points-total"><?= $user['score'] ?> PTS</td>
+                </tr>
+                <?php $rank++; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>

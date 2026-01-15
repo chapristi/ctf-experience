@@ -15,7 +15,6 @@ $router = new AltoRouter();
 
 // Views
 $router->map('GET', '/', function() { require __DIR__ . '/../views/home.php'; });
-$router->map('GET', '/scoreboard', function() { require __DIR__ . '/../views/scoreboard.php'; });
 
 //CHALLENGES
 $router->map('GET', '/click-frenzy', function() { require __DIR__ . '/../views/click_frenzy/clik_frenzy.php'; });
@@ -27,11 +26,7 @@ $router->map('POST', '/api/login', function() use ($db) { (new \App\Controller\A
 $router->map('GET', '/challenges', function() use ($db) { (new \App\Controller\ChallengeController($db))->index(); });
 $router->map('GET', '/challenge_details', function() use ($db) { (new \App\Controller\ChallengeController($db))->challengeDetails();});
 $router->map('POST', '/challenge/validateFlag', function() use ($db) { (new \App\Controller\ChallengeController($db))->submit(); });
-$router->map('GET', '/api/scoreboard', function() use ($db) {
-    $repo = new \App\Repository\UserRepository($db);
-    header('Content-Type: application/json');
-    echo json_encode($repo->getScoreboard());
-});
+$router->map('GET', '/scoreboard', function() use ($db) { (new \App\Controller\ChallengeController($db))->getGeneralScoreboard(); });
 
 $match = $router->match();
 

@@ -19,22 +19,32 @@ class ChallengeController extends BaseController{
         $this->render('challenges', ['challenges' => $data]);
     }
 
-    public function challengeDetails(){
-        $id = $_POST['challenge_id'];
+    public function challengeDetails() {
+        $id = $_GET['challenge_id'] ?? null;
+        if (!$id) {
+            die("Erreur : Aucun ID de mission fourni.");
+        }
+
         $data = $this->crepo->getChallenge($id);
+
+        if (!$data) {
+            die("Erreur : Mission introuvable.");
+        }
+
         $this->render('challenge_details', ['challenge' => $data]);
     }
 
     public function submit() {
-        header('Content-Type: application/json');
+        die("IDGAF");
         if (!isset($_SESSION['user_id'])) {
             http_response_code(401); echo json_encode(['error' => 'Login necessary']); return;
         }
+
         $flag = $_POST["flag"];
         $id = $_POST["challenge_id"];
 
         if ($this->crepo->isSolved($_SESSION['user_id'], $id)) {
-            echo json_encode(['success' => false, 'message' => 'Already solved']); return;
+            echo json_encode(['success' => false, 'message' => "Vous l'avez déjà résolu"]); return;
         }
 
         if ($this->crepo->verifyFlag($id, $flag)) {

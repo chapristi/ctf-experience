@@ -12,7 +12,7 @@ class ChallengeRepository {
     }
 
     public function getChallenge($id){
-        $request = $this->db->query("SELECT id, title, description, points, category, picture FROM challenges WHERE is_active = 1 and id = $id");
+        $request = $this->db->query("SELECT id, title, description, points, category, picture, slug, hint FROM challenges WHERE is_active = 1 and id = $id");
         return $request->fetch(PDO::FETCH_ASSOC);
     }
 

@@ -22,7 +22,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+< lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Missions Disponibles</title>
@@ -160,19 +160,17 @@
 
 <div class="grid">
     <?php foreach ($challenges as $item): ?>
-        <div class="card">
+        <div class="card" >
             <img src="<?= $item['picture'] ?>" alt="Mission GIF">
             <div>
                 <span class="category"><?= $item['category'] ?></span>
             </div>
             <h3 style="margin: 10px 0;"><?= $item['title'] ?></h3>
             <div class="points"><?= $item['points'] ?> PTS</div>
-            <a href="#" class="btn-play">DÉMARRER LA MISSION</a>
+            <a href="/challenge_details?challenge_id=<?= $item['id']  ?>" class="btn-play">DÉMARRER LA MISSION</a>
         </div>
     <?php endforeach; ?>
 </div>
 
 </body>
-
-
 </html>

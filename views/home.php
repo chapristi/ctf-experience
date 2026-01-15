@@ -47,7 +47,7 @@
                     data: JSON.stringify({ nickname: nickname }),
                     success: function(response) {
                         if (response.success) {
-                            window.location.href = "/api/challenges";
+                            window.location.href = "/challenges";
                         } else {
                             $('#messageBox').html('<p class="error-message">' + response.message + '</p>');
                         }

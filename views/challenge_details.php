@@ -1,28 +1,3 @@
-<?php/*
-$challenge = [
-    "title" => "OPSEC Fail : Le Rapport",
-    "category" => "Osint",
-    "points" => 300,
-    "description" => "Un agent a laissé un rapport sensible sur ce terminal. Le fichier est protégé par un mot de passe basé sur ses informations personnelles. Fouillez son environnement pour reconstituer la clé d'accès.",
-    "hint" => "L'agent a tendance à noter ses secrets sur des supports physiques avant de les numériser. Cherchez un post-it.",
-    "gif" => "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Y2Z2R6eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKSjPQCK9IuX8QQ/giphy.gif",
-    "url_challenge" => "/challenge/pdf"
-];
-
-$error = false;
-$success = false;
-$flag_attendu = "CTF{051NT_M45T3R_D0C}";
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $flag_saisi = $_POST['flag'] ?? '';
-    if ($flag_saisi === $flag_attendu) {
-        $success = true;
-    } else {
-        $error = true;
-    }
-}*/
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -216,11 +191,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-<a href="/challenges" class="back-nav"><_RETOUR_</a>
+<a href="/challenges" class="back-nav">_RETOUR_</a>
 
 <div class="container">
     <div class="side-panel">
-        <img src="<?= $challenge['gif'] ?>" alt="Data Visual">
+        <img src="<?= $challenge['picture'] ?>" alt="Data Visual">
         <span class="badge"><?= $challenge['category'] ?></span>
     </div>
 
@@ -232,7 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?= $challenge['description'] ?>
         </p>
 
-        <a href="<?= $challenge['url_challenge'] ?>" class="btn-launch">ACCÉDER À L'INSTANCE</a>
+        <a href="<?= $challenge['slug'] ?>" class="btn-launch">ACCÉDER À L'INSTANCE</a>
 
         <details>
             <summary>DEMANDER UN INDICE_</summary>
@@ -242,24 +217,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </details>
 
         <div class="flag-zone">
-            <?php if ($success): ?>
-                <div class="status-msg status-success">
-                    [COMPLÉTÉ] FLAG VALIDE. LES POINTS ONT ÉTÉ ATTRIBUÉS.
-                </div>
-            <?php else: ?>
-                <form method="POST">
-                    <input type="text" name="flag" placeholder="SAISIR LE FLAG (CTF{...})" required>
-                    <button type="submit" class="btn-validate">SOUMETTRE</button>
-                </form>
-                <?php if ($error): ?>
-                    <div class="status-msg status-error">
-                        [ERREUR] INTEGRITÉ ÉCHOUÉE. RÉESSAYEZ.
-                    </div>
-                <?php endif; ?>
-            <?php endif; ?>
+            <div id="flag-message" class="flag-message"></div>
+            
+            <form id="flagForm" method="POST">
+                <input type="text" id="flag" name="flag" placeholder="SAISIR LE FLAG (CTF{...})" required>
+                <button type="submit" class="btn-validate">SOUMETTRE</button>
+            </form>
         </div>
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#flagForm').on('submit', function(e) {
+                e.preventDefault();
+
+                const flag = $('#flag').val();
+                const challengeId = <?= (int)$challenge['id'] ?>; 
+
+                $.ajax({
+                    url: '/challenge/validateFlag',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ 
+                        flag: flag,
+                        challenge_id: challengeId
+                    }),
+                    success: function(response) {
+                        if (response.success) {
+                            $('#flag-message').html('<div class="status-msg status-success">BRAVOOO!!!!! ' + response.message + '</div>');
+                        } else {
+                            $('#flag-message').html('<div class="status-msg status-error">' + response.message + '</div>');
+                        }
+                    },
+                    error: function(xhr) {
+                        const errorMsg = xhr.responseJSON ? xhr.responseJSON.error : 'Une erreur est survenue.';
+                        $('#flag-message').html('<div class="status-msg status-error">' + errorMsg + '</div>');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

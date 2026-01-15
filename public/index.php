@@ -17,6 +17,7 @@ $router = new AltoRouter();
 $router->map('GET', '/', function() { require __DIR__ . '/../views/home.php'; });
 
 //CHALLENGES
+//Here will be the routes for each challenge of our ctf
 $router->map('GET', '/click-frenzy', function() { require __DIR__ . '/../views/click_frenzy/clik_frenzy.php'; });
 $router->map('GET,POST', '/keep-your-life-private', function() { require __DIR__ . '/../views/keep_your_life_private/keep_your_life_private.php'; });
 $router->map('GET', '/not-secure-login', function() { require __DIR__ . '/../views/not_secure_login/not_secure_login.php'; });
@@ -25,6 +26,9 @@ $router->map('GET, POST', '/hidden_in_plain_sight', function() { require __DIR__
 $router->map('GET', '/hidden_in_plain_sight/desktop', function() {
     require __DIR__ . '/../views/hidden_in_plain_sight/desktop.php';
 });
+//MARIE OSINT
+$router->map('GET, POST', '/marie-osint', function() { require __DIR__ . '/../views/marie_osint/oubli_de_marie.php'; });
+
 
 // API
 $router->map('POST', '/auth/login', function() use ($db) { (new \App\Controller\AuthController($db))->login(); });

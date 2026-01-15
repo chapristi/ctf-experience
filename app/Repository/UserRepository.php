@@ -3,6 +3,7 @@ namespace App\Repository;
 
 use App\Model\User;
 use PDO;
+use Exception;
 
 class UserRepository {
     private PDO $db;
@@ -41,8 +42,42 @@ class UserRepository {
         return $users;
     }
 
-    public function addScore(int $userId, int $challengeId): bool {
-        $stmt = $this->db->prepare("INSERT IGNORE INTO solves (user_id, challenge_id) VALUES (?, ?)");
-        return $stmt->execute([$userId, $challengeId]);
+    public function processChallengeSolve(int $userId, int $challengeId): bool {
+        try {
+            $this->db->beginTransaction();
+
+            $check = $this->db->prepare("SELECT id FROM solves WHERE user_id = ? AND challenge_id = ?");
+            $check->execute([$userId, $challengeId]);
+            if ($check->fetch()) {
+                $this->db->rollBack();
+                return false;
+            }
+
+            $stmtPoints = $this->db->prepare("SELECT points FROM challenges WHERE id = ?");
+            $stmtPoints->execute([$challengeId]);
+            $challenge = $stmtPoints->fetch(PDO::FETCH_ASSOC);
+
+            if (!$challenge) {
+                throw new Exception("Défi inexistant");
+            }
+
+            $points = (int)$challenge['points'];
+
+            $stmtLog = $this->db->prepare("INSERT INTO solves (user_id, challenge_id) VALUES (?, ?)");
+            $stmtLog->execute([$userId, $challengeId]);
+
+            $stmtUpdate = $this->db->prepare("UPDATE users SET score = score + ? WHERE id = ?");
+            $stmtUpdate->execute([$points, $userId]);
+
+            $this->db->commit();
+            return true;
+
+        } catch (Exception $e) {
+            if ($this->db->inTransaction()) {
+                $this->db->rollBack();
+            }
+            error_log("Erro ao processar score: " . $e->getMessage());
+            return false;
+        }
     }
 }

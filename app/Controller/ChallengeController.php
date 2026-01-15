@@ -35,23 +35,43 @@ class ChallengeController extends BaseController{
     }
 
     public function submit() {
-        die("IDGAF");
-        if (!isset($_SESSION['user_id'])) {
-            http_response_code(401); echo json_encode(['error' => 'Login necessary']); return;
-        }
+    header('Content-Type: application/json');
 
-        $flag = $_POST["flag"];
-        $id = $_POST["challenge_id"];
-
-        if ($this->crepo->isSolved($_SESSION['user_id'], $id)) {
-            echo json_encode(['success' => false, 'message' => "Vous l'avez déjà résolu"]); return;
-        }
-
-        if ($this->crepo->verifyFlag($id, $flag)) {
-            $this->urepo->addScore($_SESSION['user_id'], $id);
-            echo json_encode(['success' => true, 'message' => 'Correct']);
-        } else {
-            echo json_encode(['success' => false, 'message' => 'Wrong']);
-        }
+    if (!isset($_SESSION['user_id'])) {
+        http_response_code(401);
+        echo json_encode(['success' => false, 'error' => 'Connexion requise']);
+        return;
     }
+
+    $input = json_decode(file_get_contents('php://input'), true);
+
+    $flag = $input['flag'] ?? $_POST['flag'] ?? null;
+    $id = $input['challenge_id'] ?? $_POST['challenge_id'] ?? null;
+
+    if (!$flag || !$id) {
+        echo json_encode(['success' => false, 'message' => 'Données manquantes']);
+        return;
+    }
+
+    $userId = (int)$_SESSION['user_id'];
+    $challengeId = (int)$id;
+
+    if ($this->crepo->isSolved($userId, $challengeId)) {
+        echo json_encode(['success' => false, 'message' => "Mission déjà accomplie, Agent."]);
+        return;
+    }
+    
+    if ($this->crepo->verifyFlag($challengeId, $flag)) {
+
+        $result = $this->urepo->processChallengeSolve($userId, $challengeId);
+        
+        if ($result) {
+            echo json_encode(['success' => true, 'message' => 'Félicitations ! Flag correct.']);
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Erreur lors de la mise à jour du score.']);
+        }
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Flag incorrect. Réessayez.']);
+    }
+}
 }

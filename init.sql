@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS challenges (
     flag VARCHAR(255) NOT NULL,
     category VARCHAR(50),
     slug VARCHAR(100) NOT NULL,
-    hint TEXT NOT NULL,
+    hint TEXT,
     is_active BOOLEAN DEFAULT TRUE
 ) ENGINE=InnoDB;
 

@@ -50,7 +50,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     75, 
     'CTF{H7ML_C0MM3N7S_R_N0T_S3CUR3}', 
     'Web', 
-    'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmJ5YnZzeXp4YnZzeXp4YnZzeXp4YnZzeXp4YnZzeXp4YnZzeXp4YnZzeXp4YnZzeXp4L2dpcGh5LmdpZg/xTiTnHvXHHxOTcdvrO/giphy.gif', 
+    'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExam1xcGltOGE0c2V0ZHljNmxjbTRpNGFtYjJseDV0NTV4dGZ0a3U0OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pUVOeIagS1rrqsYQJe/giphy.gif', 
     "L\'interface graphique n\'est qu\'une façade. Regardez ce qui la compose (CTRL+U ou F12).", 
     "/hidden_in_plain_sight"
 );

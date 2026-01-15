@@ -4,7 +4,7 @@ use App\Repository\UserRepository;
 use PDO;
 use App\Controller\ChallengeController;
 
-class AuthController {
+class AuthController extends BaseController{
     private UserRepository $repo;
     public function __construct(PDO $db) {
         $this->repo = new UserRepository($db);

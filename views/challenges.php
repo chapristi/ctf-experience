@@ -127,7 +127,7 @@
 </head>
 <body>
 
-<a href="/logout" class="btn-signout">DÉCONNEXION [X]</a>
+<a href="/auth/logout" class="btn-signout">DÉCONNEXION [X]</a>
 
 <header>
     <h1 style="color: #39ff14; font-size: 2.5em;">Tableau des Missions</h1>

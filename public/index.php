@@ -22,7 +22,16 @@ $router->map('GET,POST', '/keep-your-life-private', function() { require __DIR__
 $router->map('GET', '/not-secure-login', function() { require __DIR__ . '/../views/not_secure_login/not_secure_login.php'; });
 
 // API
-$router->map('POST', '/api/login', function() use ($db) { (new \App\Controller\AuthController($db))->login(); });
+$router->map('POST', '/auth/login', function() use ($db) { (new \App\Controller\AuthController($db))->login(); });
+$router->map('GET', '/auth/logout', function() {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    $_SESSION = array();
+    session_destroy();
+    header('Location: /');
+    exit;
+});
 $router->map('GET', '/challenges', function() use ($db) { (new \App\Controller\ChallengeController($db))->index(); });
 $router->map('GET', '/challenge_details', function() use ($db) { (new \App\Controller\ChallengeController($db))->challengeDetails();});
 $router->map('POST', '/challenge/validateFlag', function() use ($db) { (new \App\Controller\ChallengeController($db))->submit(); });

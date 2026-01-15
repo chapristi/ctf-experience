@@ -41,7 +41,7 @@
                 const nickname = $('#nickname').val();
 
                 $.ajax({
-                    url: '/api/login',
+                    url: '/auth/login',
                     method: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify({ nickname: nickname }),

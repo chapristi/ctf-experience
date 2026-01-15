@@ -19,6 +19,12 @@ class ChallengeController extends BaseController{
         $this->render('challenges', ['challenges' => $data]);
     }
 
+    public function challenge_details(){
+        $id = $_POST['challenge_id'];
+
+        $data = $this->crepo->get
+    }
+
     public function submit() {
         header('Content-Type: application/json');
         if (!isset($_SESSION['user_id'])) {

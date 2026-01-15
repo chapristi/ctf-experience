@@ -25,7 +25,7 @@ $router->map('GET', '/not-secure-login', function() { require __DIR__ . '/../vie
 // API
 $router->map('POST', '/api/login', function() use ($db) { (new \App\Controller\AuthController($db))->login(); });
 $router->map('GET', '/challenges', function() use ($db) { (new \App\Controller\ChallengeController($db))->index(); });
-$router->map('GET', '/challenge_details', function() use ($db) { (new \App\Controller\ChallengeController($db))->index();});
+$router->map('GET', '/challenge_details', function() use ($db) { (new \App\Controller\ChallengeController($db))->challengeDetails();});
 $router->map('POST', '/challenge/validateFlag', function() use ($db) { (new \App\Controller\ChallengeController($db))->submit(); });
 $router->map('GET', '/api/scoreboard', function() use ($db) {
     $repo = new \App\Repository\UserRepository($db);

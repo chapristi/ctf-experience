@@ -1,28 +1,5 @@
-<?php
-/*$challenges = [
-    [
-        "title" => "Pas si inconnu...",
-        "category" => "Osint",
-        "points" => 100,
-        "gif" => "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDZwcXg2eXN4Yzd2NHlrYno1OTZpODNvYTZvMHdteHN3NHN4b2ZjOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/A1oBMukTqFfkoY1HiH/giphy.gif"
-    ],
-    [
-        "title" => "Le Secret de l'Admin",
-        "category" => "Web",
-        "points" => 250,
-        "gif" => "https://media1.tenor.com/m/0P2I-Z4sFB0AAAAC/key-magic-key.gif"
-    ],
-    [
-        "title" => "Stupid...",
-        "category" => "Web",
-        "points" => 500,
-        "gif" => "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMW5tcTdxYnZjOXkyOWZ6emQ3OTE1aW50Y3R6ZnJvdWR3dTR3bXg1cCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/gq8bvfkh2EIZAnntsc/giphy.gif"
-    ]
-];*/
-?>
-
 <!DOCTYPE html>
-< lang="fr">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Missions Disponibles</title>

@@ -37,11 +37,12 @@ INSERT INTO users (nickname) VALUES
 ('Trinity'),
 ('Cypher');
 
-INSERT INTO challenges (title, description, points, flag, category, picture, slug) VALUES 
-('Porta Aberta', 'Encontra a flag no código fonte da página.', 100, 'CTF{view_source_is_key}', 'Web', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDZwcXg2eXN4Yzd2NHlrYno1OTZpODNvYTZvMHdteHN3NHN4b2ZjOSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/A1oBMukTqFfkoY1HiH/giphy.gif', '/challenges'),
-('Cifra de César', 'Descodifica: PHQVDJHP', 150, 'CTF{mensagem_secreta}', 'Crypto', 'https://media1.tenor.com/m/0P2I-Z4sFB0AAAAC/key-magic-key.gif', '/challenges'),
-('Binary Search', 'Explora o buffer overflow.', 300, 'CTF{pwn_the_stack}', 'Pwn', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMW5tcTdxYnZjOXkyOWZ6emQ3OTE1aW50Y3R6ZnJvdWR3dTR3bXg1cCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/gq8bvfkh2EIZAnntsc/giphy.gif', '/challenges');
+INSERT INTO challenges (title, description, points, flag, category, picture, hint, slug) VALUES
+                                                                                             ('Click Frenzy', 'Atteignez 100 000 clics pour forcer l''accès. Une manipulation directe de l''URL est plus rapide que l''endurance.', 100, 'CTF{U4L_M4N1PUL4T10N_15_K3Y}', 'Web', 'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 'Regardez bien les paramètres GET dans la barre d''adresse du navigateur.', '/click-frenzy'),
 
+                                                                                             ('Keep you life private', 'Un agent a laissé un rapport sécurisé. Reconstituez le mot de passe en utilisant les indices du post-it (Osint).', 150, 'CTF{051NT_M45T3R_D0C}', 'Osint', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWQ1N2tnamdkemRpamdpdHB3aTFkMDdiYXRoY2xtdDU0aGNkZmpudyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9rRacglGbs68E/giphy.gif', 'L''ordre classique est Nom + Année + Symbole.', '/keep-your-life-private'),
+
+                                                                                             ('Not a secure login', 'Le système de vérification des identifiants est exposé. Fouillez le code source JavaScript pour trouver la clé.', 300, 'CTF{J4V45CR1P7_15_PU8L1C}', 'Web', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3dlejN2Z3d5Z2dnZjJkNzduYzNudnBrbHhsNnpobXNsYmhwemdwdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/11fot0YzpQMA0g/giphy.gif', 'Faites un clic droit sur la page et sélectionnez "Inspecter" puis allez dans l''onglet "Sources" ou "Debugger".', '/not-secure-login');
 INSERT INTO solves (user_id, challenge_id) VALUES 
 (1, 1),
 (1, 2), 

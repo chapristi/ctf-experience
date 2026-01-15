@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding-left: 15px;
         }
 
-        input[type="password"] {
+        input[type="text"] {
             width: 100%;
             background: #0d1117;
             border: 1px solid var(--border-color);
@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             transition: border-color 0.3s;
         }
 
-        input[type="password"]:focus {
+        input[type="text"]:focus {
             border-color: var(--neon-green);
             box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
         }
@@ -193,7 +193,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php else: ?>
             <form method="POST">
                 <label style="font-size: 0.7rem; color: #8b949e; display: block; margin-bottom: 10px; letter-spacing: 1px;">SÉQUENCE_DÉCRYPTAGE_REQUISE</label>
-                <input type="password" name="password" required placeholder="ENTRER LE MOT DE PASSE">
+                <input type="text" name="password" required placeholder="ENTRER LE MOT DE PASSE">
                 <button type="submit" class="btn-decrypt">Se connecter</button>
             </form>
             <?php if ($error): ?>

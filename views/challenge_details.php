@@ -207,7 +207,9 @@
             <?= $challenge['description'] ?>
         </p>
 
-        <a href="<?= $challenge['slug'] ?>" class="btn-launch">ACCÉDER À L'INSTANCE</a>
+        <a href="<?= $challenge['slug'] ?>" class="btn-launch" target="_blank" rel="noopener noreferrer">
+            ACCÉDER À L'INSTANCE
+        </a>
 
         <details>
             <summary>DEMANDER UN INDICE_</summary>

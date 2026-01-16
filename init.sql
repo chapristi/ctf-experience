@@ -44,7 +44,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'CTF{U4L_M4N1PUL4T10N_15_K3Y}', 
     'Web', 
     'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 
-    'Regardez bien les paramètres',
+    'Regardez bien l''url',
     '/challenge/click-frenzy'),
 
 (

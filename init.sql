@@ -3,15 +3,15 @@ CREATE DATABASE IF NOT EXISTS my_database;
 USE my_database;
 
 CREATE TABLE IF NOT EXISTS users (
-                                     id INT AUTO_INCREMENT PRIMARY KEY,
-                                     nickname VARCHAR(50) NOT NULL UNIQUE,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nickname VARCHAR(50) NOT NULL UNIQUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     score int default 0
-    ) ENGINE=InnoDB;
+) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS challenges (
-                                          id INT AUTO_INCREMENT PRIMARY KEY,
-                                          title VARCHAR(100) NOT NULL,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
     description TEXT,
     picture TEXT,
     points INT DEFAULT 0,
@@ -20,71 +20,83 @@ CREATE TABLE IF NOT EXISTS challenges (
     slug VARCHAR(100) NOT NULL,
     hint TEXT,
     is_active BOOLEAN DEFAULT TRUE
-    ) ENGINE=InnoDB;
+) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS solves (
-                                      id INT AUTO_INCREMENT PRIMARY KEY,
-                                      user_id INT NOT NULL,
-                                      challenge_id INT NOT NULL,
-                                      solved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                                      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    challenge_id INT NOT NULL,
+    solved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (challenge_id) REFERENCES challenges(id) ON DELETE CASCADE,
     UNIQUE KEY unique_solve (user_id, challenge_id)
-    ) ENGINE=InnoDB;
+) ENGINE=InnoDB;
 
-INSERT INTO users (nickname) VALUES
-                                 ('Neo'),
-                                 ('Trinity'),
-                                 ('Cypher');
+INSERT INTO users (nickname) VALUES 
+('Neo'),
+('Trinity'),
+('Cypher');
 
 INSERT INTO challenges (title, description, points, flag, category, picture, hint, slug) VALUES
-                                                                                             ('Clic, clic, re-clic !', 'Atteignez 100 000 clics. Mieux vaut réfléchir que agir.', 100, 'CTF{U4L_M4N1PUL4T10N_15_K3Y}', 'Web', 'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 'Regardez bien les paramètres GET dans la barre d''adresse du navigateur.', '/challenge/click-frenzy'),
+('Click Frenzy', 'Atteignez 100 000 clics pour forcer l''accès. Une manipulation directe de l''URL est plus rapide que l''endurance.', 100, 'CTF{U4L_M4N1PUL4T10N_15_K3Y}', 'Web', 'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 'Regardez bien les paramètres GET dans la barre d''adresse du navigateur.', '/challenge/click-frenzy'),
 
-                                                                                             ('Garde ta vie privée', 'Un agent a laissé un rapport sécurisé. Reconstituez le mot de passe en utilisant les indices du post-it (Osint).', 150, 'CTF{051NT_M45T3R_D0C}', 'Osint', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWQ1N2tnamdkemRpamdpdHB3aTFkMDdiYXRoY2xtdDU0aGNkZmpudyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9rRacglGbs68E/giphy.gif', 'L''ordre classique est Nom + Année + Symbole.', '/challenge/keep-your-life-private'),
+('Keep you life private', 'Un agent a laissé un rapport sécurisé. Reconstituez le mot de passe en utilisant les indices du post-it (Osint).', 150, 'CTF{051NT_M45T3R_D0C}', 'Osint', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWQ1N2tnamdkemRpamdpdHB3aTFkMDdiYXRoY2xtdDU0aGNkZmpudyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9rRacglGbs68E/giphy.gif', 'L''ordre classique est Nom + Année + Symbole.', '/challenge/keep-your-life-private'),
 
-                                                                                             ('Le stagiaire gère, apparemment', 'Le système de vérification des identifiants est exposé.', 300, 'CTF{J4V45CR1P7_15_PU8L1C}', 'Web', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3dlejN2Z3d5Z2dnZjJkNzduYzNudnBrbHhsNnpobXNsYmhwemdwdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/11fot0YzpQMA0g/giphy.gif', 'Faites un clic droit sur la page et sélectionnez "Inspecter" puis allez dans l''onglet "Sources" ou "Debugger".', '/challenge/not-secure-login'),
+('Not a secure login', 'Le système de vérification des identifiants est exposé. Fouillez le code source JavaScript pour trouver la clé.', 300, 'CTF{J4V45CR1P7_15_PU8L1C}', 'Web', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3dlejN2Z3d5Z2dnZjJkNzduYzNudnBrbHhsNnpobXNsYmhwemdwdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/11fot0YzpQMA0g/giphy.gif', 'Faites un clic droit sur la page et sélectionnez "Inspecter" puis allez dans l''onglet "Sources" ou "Debugger".', '/challenge/not-secure-login'),
 
-                                                                                             (
-                                                                                                 'System Override',
-                                                                                                 'Un administrateur négligent a laissé traîner ses identifiants. Connectez-vous au système pour récupérer le fichier secret sur le bureau.',
-                                                                                                 75,
-                                                                                                 'CTF{H7ML_C0MM3N7S_R_N0T_S3CUR3}',
-                                                                                                 'Web',
-                                                                                                 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExam1xcGltOGE0c2V0ZHljNmxjbTRpNGFtYjJseDV0NTV4dGZ0a3U0OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pUVOeIagS1rrqsYQJe/giphy.gif',
-                                                                                                 "L\'interface graphique n\'est qu\'une façade. Regardez ce qui la compose (CTRL+U ou F12).",
-                                                                                                 "/challenge/hidden_in_plain_sight"
-                                                                                             ),
+(
+    'System Override', 
+    'Un administrateur négligent a laissé traîner ses identifiants. Connectez-vous au système pour récupérer le fichier secret sur le bureau.', 
+    75, 
+    'CTF{H7ML_C0MM3N7S_R_N0T_S3CUR3}', 
+    'Web', 
+    'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExam1xcGltOGE0c2V0ZHljNmxjbTRpNGFtYjJseDV0NTV4dGZ0a3U0OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pUVOeIagS1rrqsYQJe/giphy.gif', 
+    "L\'interface graphique n\'est qu\'une façade. Regardez ce qui la compose (CTRL+U ou F12).", 
+    "/challenge/hidden_in_plain_sight"
+),
 
-                                                                                             (
-                                                                                                 "L'Oubli de Marie",
-                                                                                                 'Marie utilise souvent des informations personnelles pour ses mots de passe. Fouillez son profil pour ouvrir son coffre-fort numérique.',
-                                                                                                 125,
-                                                                                                 'CTF{0S1NT_D0G_M4M4_1992}',
-                                                                                                 'Osint',
-                                                                                                 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTFqbmtlcDNuZnh0ZXYyZm93Y3MwcTllaDMyYjhha3R5OWd1cjI0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2FaznsStYLpCNFhwQ/giphy.gif',
-                                                                                                 "Calculez son année de naissance en observant ses publications et n'oubliez pas le nom de son compagnon à quatre pattes.",
-                                                                                                 '/challenge/marie-osint'
-                                                                                             ),
-                                                                                             (
-                                                                                                 'Interception Radio',
-                                                                                                 'Nos systèmes ont capté une transmission ennemie cryptée. Utilisez vos compétences de décodage pour extraire les ordres du commandant.',
-                                                                                                 100,
-                                                                                                 'CTF{B453_64_M1L1T4RY_C4LL}',
-                                                                                                 'Crypto',
-                                                                                                 'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2l1ZmFrd2xhaWhhdHB0MjB4ZTZ3OWoyMnJvM2hoajBmZTA0NmJhbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bmcynfPM96sC4KOKI3/giphy.gif',
-                                                                                                 'Le texte ressemble à une soupe de lettres et de chiffres. Cherchez des codages courants comme le Base64. La fonction atob() peut vous être utile.',
-                                                                                                 '/challenge/interception_radio'
-                                                                                             ),
-                                                                                             ('Tout est au point',
-                                                                                              'Une image a été interceptée. Elle semble cacher la ville dans laquelle se déroulera la prochaine mission.',
-                                                                                              250,
-                                                                                              'CTF{LIMOGES}',
-                                                                                              'Stegano',
-                                                                                              'https://images-ext-1.discordapp.net/external/6GFN1LygOFAeJV5jRX5RLNHZFrhVtf2PcYdRi3f4ckQ/https/media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamxsNnZ6OG5oMnM3aGpkM3prbHpsN3U5YWdrcXdyNmxud24zZXJjNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/kd9BlRovbPOykLBMqX/giphy.gif',
-                                                                                              'Faites attention à ce qu''il y a autour des points suspects.',
-                                                                                              '/challenge/tout-est-au-point');
+(
+    "L'Oubli de Marie", 
+    'Marie utilise souvent des informations personnelles pour ses mots de passe. Fouillez son profil pour ouvrir son coffre-fort numérique.', 
+    125, 
+    'CTF{0S1NT_D0G_M4M4_1992}', 
+    'Osint', 
+    'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTFqbmtlcDNuZnh0ZXYyZm93Y3MwcTllaDMyYjhha3R5OWd1cjI0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2FaznsStYLpCNFhwQ/giphy.gif', 
+    "Calculez son année de naissance en observant ses publications et n'oubliez pas le nom de son compagnon à quatre pattes.", 
+    '/challenge/marie-osint'
+),
+(
+    'Interception Radio', 
+    'Nos systèmes ont capté une transmission ennemie cryptée. Utilisez vos compétences de décodage pour extraire les ordres du commandant.', 
+    100, 
+    'CTF{B453_64_M1L1T4RY_C4LL}', 
+    'Crypto', 
+    'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2l1ZmFrd2xhaWhhdHB0MjB4ZTZ3OWoyMnJvM2hoajBmZTA0NmJhbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bmcynfPM96sC4KOKI3/giphy.gif', 
+    'Le texte ressemble à une soupe de lettres et de chiffres. Cherchez des codages courants comme le Base64. La fonction atob() peut vous être utile.', 
+    '/challenge/interception_radio'
+),
+(
+    "Le Chiffre de l\'Empereur", 
+    'Nous avons retrouvé une vieille note de la Seconde Guerre Mondiale. Elle semble utiliser un système de décalage inventé par Jules César lui-même.', 
+    100, 
+    'CTF{C43S4R_W1TH_TH3_M1L1T4RY}', 
+    'Crypto', 
+    'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXlibHpndTFlOGl0bmZubjF1ZjRxMnF6ZG80YnN4aDIxNnJkaW5tdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/16AmBIzIdoWdgqqb4m/giphy.gif', 
+    'Rappelez-vous : Décalage de 3. Si A = D, alors quelle lettre donne C ?', 
+    '/challenge/caesar-military'
+),
+(
+    'Tout est au point',
+    'Une image a été interceptée. Elle semble cacher la ville dans laquelle se déroulera la prochaine mission.',
+    250,
+    'CTF{LIMOGES}',
+    'Stegano',
+    'https://images-ext-1.discordapp.net/external/6GFN1LygOFAeJV5jRX5RLNHZFrhVtf2PcYdRi3f4ckQ/https/media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamxsNnZ6OG5oMnM3aGpkM3prbHpsN3U5YWdrcXdyNmxud24zZXJjNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/kd9BlRovbPOykLBMqX/giphy.gif',
+    'Faites attention à ce qu''il y a autour des points suspects.',
+    '/challenge/tout-est-au-point'
+);
 
-INSERT INTO solves (user_id, challenge_id) VALUES
-                                               (1, 1),
-                                               (1, 2),
-                                               (2, 1);
+INSERT INTO solves (user_id, challenge_id) VALUES 
+(1, 1),
+(1, 2), 
+(2, 1);

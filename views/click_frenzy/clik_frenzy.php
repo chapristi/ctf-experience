@@ -72,8 +72,6 @@ $flag = "CTF{U4L_M4N1PUL4T10N_15_K3Y}";
 </head>
 <body>
 
-<a href="/challenges" class="back-link"><-- Annuler la mission</a>
-
 <div class="challenge-container">
     <h1>MISSION : CLIC_FORCE</h1>
     <p>Atteignez <strong><?= number_format($target, 0, '.', ' ') ?></strong> clics pour débloquer le mot de passe.</p>

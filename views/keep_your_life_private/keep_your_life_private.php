@@ -175,8 +175,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-<a href="/challenges" class="back-nav"><_RETOUR_</a>
-
 <div class="workspace">
     <div class="main-panel">
         <span class="pdf-icon">📄</span>

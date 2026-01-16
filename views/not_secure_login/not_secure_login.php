@@ -115,8 +115,6 @@
 </head>
 <body>
 
-<a href="/challenges" class="back-nav"><_ ABANDONNER</a>
-
 <div class="login-card">
     <div class="header-icon">🔒</div>
     <h1>GateKeeper_OS v1.0</h1>

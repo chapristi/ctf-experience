@@ -3,7 +3,7 @@ function validateAccess() {
     const pass = document.getElementById('password').value;
     const display = document.getElementById('message');
 
-    const encodedFlag = "Q1RGe0o0VjRTVDU1UjFQN18xNV9QVTZMMUN9";
+    const encodedFlag = "Q1RGe0o0VjQ1Q1IxUDdfMTVfUFU4TDFDfQ==";
 
     if (user === "admin_sec" && pass === "P4ssw0rd_Unbr3akabl3!") {
         const decodedFlag = atob(encodedFlag);

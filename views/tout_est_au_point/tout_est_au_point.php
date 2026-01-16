@@ -120,8 +120,6 @@ $flag = "CTF{BOMBE_LOCALISEE_STADE_FRANCE}";
 </head>
 <body>
 
-<a href="/challenges" class="back-nav"><_ RETOUR_SYSTÈME</a>
-
 <div class="workspace">
     <div class="header">
         <div style="text-align: left;">

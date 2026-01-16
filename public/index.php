@@ -28,6 +28,8 @@ $router->map('GET', '/hidden_in_plain_sight/desktop', function() {
 });
 //MARIE OSINT
 $router->map('GET, POST', '/marie-osint', function() { require __DIR__ . '/../views/marie_osint/oubli_de_marie.php'; });
+//MILITARY_INTERCEPT
+$router->map('GET, POST', '/interception_radio', function() { require __DIR__ . '/../views/interception_radio/military_desktop.php'; });
 
 
 // API

@@ -64,6 +64,16 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTFqbmtlcDNuZnh0ZXYyZm93Y3MwcTllaDMyYjhha3R5OWd1cjI0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2FaznsStYLpCNFhwQ/giphy.gif', 
     "Calculez son année de naissance en observant ses publications et n'oubliez pas le nom de son compagnon à quatre pattes.", 
     '/marie-osint'
+),
+(
+    'Interception Radio', 
+    'Nos systèmes ont capté une transmission ennemie cryptée. Utilisez vos compétences de décodage pour extraire les ordres du commandant.', 
+    100, 
+    'CTF{B453_64_M1L1T4RY_C4LL}', 
+    'Crypto', 
+    'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2l1ZmFrd2xhaWhhdHB0MjB4ZTZ3OWoyMnJvM2hoajBmZTA0NmJhbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bmcynfPM96sC4KOKI3/giphy.gif', 
+    'Le texte ressemble à une soupe de lettres et de chiffres. Cherchez des codages courants comme le Base64.', 
+    '/interception_radio'
 );
 
 INSERT INTO solves (user_id, challenge_id) VALUES 

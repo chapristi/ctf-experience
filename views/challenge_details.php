@@ -222,7 +222,7 @@
             <div id="flag-message" class="flag-message"></div>
             
             <form id="flagForm" method="POST">
-                <input type="text" id="flag" name="flag" placeholder="SAISIR LE FLAG (CTF{...})" required>
+                <input type="text" id="flag" name="flag" autocomplete="off" placeholder="SAISIR LE FLAG (CTF{...})" required>
                 <button type="submit" class="btn-validate">SOUMETTRE</button>
             </form>
         </div>

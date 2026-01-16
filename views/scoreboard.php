@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="5">
     <title>Scoreboard - CTF</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
@@ -100,7 +101,7 @@
             <th>Score</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="scoreboard-body">
             <?php $rank = 1; ?>
             <?php foreach ($users as $user): ?>
                 <tr>
@@ -121,4 +122,20 @@
 </div>
 
 </body>
+<script>
+    function refreshScoreboard() {
+        fetch(window.location.href)
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const newContent = doc.querySelector('#scoreboard-body').innerHTML;
+
+                document.querySelector('#scoreboard-body').innerHTML = newContent;
+                console.log("Scoreboard actualisé !");
+            })
+            .catch(err => console.error("Erreur de mise à jour :", err));
+    }
+    setInterval(refreshScoreboard, 5000);
+</script>
 </html>

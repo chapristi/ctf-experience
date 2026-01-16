@@ -3,7 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass = $_POST['password'] ?? '';
 
     if ($pass === 'Admin123!') {
-        header("Location: /hidden_in_plain_sight/desktop");
+        header("Location: /challenge/git hidden_in_plain_sight/desktop");
         require __DIR__ . '/../views/hidden_in_plain_sight/desktop.php';
         exit;
     } else {

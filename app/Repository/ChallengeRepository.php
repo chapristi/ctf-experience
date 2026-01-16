@@ -7,7 +7,7 @@ class ChallengeRepository {
     public function __construct(PDO $db) { $this->db = $db; }
 
     public function getAll(): array {
-        $stmt = $this->db->query("SELECT id, title, description, points, category, picture FROM challenges WHERE is_active = 1");
+        $stmt = $this->db->query("SELECT id, title, description, points, category, picture FROM challenges WHERE is_active = 1 ORDER BY points ASC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 

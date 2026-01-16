@@ -38,7 +38,7 @@ INSERT INTO users (nickname) VALUES
                                  ('Cypher');
 
 INSERT INTO challenges (title, description, points, flag, category, picture, hint, slug) VALUES
-                                                                                             ('Clic, clic, re-clic !', 'Atteignez 100 000 clics pour forcer l''accès. Une manipulation directe de l''URL est plus rapide que l''endurance.', 100, 'CTF{U4L_M4N1PUL4T10N_15_K3Y}', 'Web', 'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 'Regardez bien les paramètres GET dans la barre d''adresse du navigateur.', '/challenge/click-frenzy'),
+                                                                                             ('Clic, clic, re-clic !', 'Atteignez 100 000 clics. Mieux vaut réfléchir que agir.', 100, 'CTF{U4L_M4N1PUL4T10N_15_K3Y}', 'Web', 'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 'Regardez bien les paramètres GET dans la barre d''adresse du navigateur.', '/challenge/click-frenzy'),
 
                                                                                              ('Garde ta vie privée', 'Un agent a laissé un rapport sécurisé. Reconstituez le mot de passe en utilisant les indices du post-it (Osint).', 150, 'CTF{051NT_M45T3R_D0C}', 'Osint', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWQ1N2tnamdkemRpamdpdHB3aTFkMDdiYXRoY2xtdDU0aGNkZmpudyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9rRacglGbs68E/giphy.gif', 'L''ordre classique est Nom + Année + Symbole.', '/challenge/keep-your-life-private'),
 
@@ -76,7 +76,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
                                                                                                  '/challenge/interception_radio'
                                                                                              ),
                                                                                              ('Tout est au point',
-                                                                                              'Une image satellite a été interceptée. Des anomalies de pixels suggèrent que des coordonnées y sont dissimulées. Localisez la menace avant qu''il ne soit trop tard.',
+                                                                                              'Une image a été interceptée. Elle semble cacher la ville dans laquelle se déroulera la prochaine mission.',
                                                                                               250,
                                                                                               'CTF{LIMOGES}',
                                                                                               'Stegano',

@@ -19,21 +19,25 @@ $router->map('GET', '/', function() { require __DIR__ . '/../views/home.php'; })
 //CHALLENGES
 //Here will be the routes for each challenge of our ctf
 $router->map('GET', '/challenge/click-frenzy', function() { require __DIR__ . '/../views/click_frenzy/clik_frenzy.php'; });
+//KEEP_YOUR_LIFE_PRIVATE
 $router->map('GET,POST', '/challenge/keep-your-life-private', function() { require __DIR__ . '/../views/keep_your_life_private/keep_your_life_private.php'; });
+//NOT_A_SECURE_LOGIN
 $router->map('GET', '/challenge/not-secure-login', function() { require __DIR__ . '/../views/not_secure_login/not_secure_login.php'; });
 //HIDDEN_IN_PLAIN_SIGHT
 $router->map('GET, POST', '/challenge/hidden_in_plain_sight', function() { require __DIR__ . '/../views/hidden_in_plain_sight/login.php'; });
 $router->map('GET', '/challenge/hidden_in_plain_sight/desktop', function() {
     require __DIR__ . '/../views/hidden_in_plain_sight/desktop.php';
 });
-//MARIE OSINT
+//MARIE_OSINT
 $router->map('GET, POST', '/challenge/marie-osint', function() { require __DIR__ . '/../views/marie_osint/oubli_de_marie.php'; });
 //MILITARY_INTERCEPT
 $router->map('GET, POST', '/challenge/interception_radio', function() { require __DIR__ . '/../views/interception_radio/military_desktop.php'; });
-//CAESAR MILITARY
+//CAESAR_MILITARY
 $router->map('GET, POST', '/challenge/caesar-military', function() { require __DIR__ . '/../views/chiffre_de_l_empereur/caesar_mission.php'; });
-//TOUT EST AU POINT
+//TOUT_EST_AU_POINT
 $router->map('GET', '/challenge/tout-est-au-point', function() { require __DIR__ . '/../views/tout_est_au_point/tout_est_au_point.php'; });
+//MILITARY_LOGS
+$router->map('GET, POST', '/challenge/military-logs', function() { require __DIR__ . '/../views/traces_dans_l_ombre/log_analysis.php'; });
 
 
 // API

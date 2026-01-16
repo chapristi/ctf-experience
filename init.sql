@@ -32,10 +32,9 @@ CREATE TABLE IF NOT EXISTS solves (
     UNIQUE KEY unique_solve (user_id, challenge_id)
 ) ENGINE=InnoDB;
 
-INSERT INTO users (nickname) VALUES 
-('Neo'),
-('Trinity'),
-('Cypher');
+INSERT INTO users (nickname, score) VALUES 
+('azle1xv', 500),
+('chapristi', 500);
 
 INSERT INTO challenges (title, description, points, flag, category, picture, hint, slug) VALUES
 (
@@ -116,9 +115,14 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'https://images-ext-1.discordapp.net/external/6GFN1LygOFAeJV5jRX5RLNHZFrhVtf2PcYdRi3f4ckQ/https/media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamxsNnZ6OG5oMnM3aGpkM3prbHpsN3U5YWdrcXdyNmxud24zZXJjNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/kd9BlRovbPOykLBMqX/giphy.gif',
     'Faites attention à ce qu''il y a autour des points suspects.',
     '/challenge/tout-est-au-point'
+),
+(
+    "Traces dans l\'Ombre", 
+    "Le serveur central a été bombardé de requêtes. Une seule a réussi à franchir nos défenses. Analysez les journaux d\'accès pour trouver la trace de l\'intrus.", 
+    150, 
+    'CTF{L0G_M45T3R_D3T3CT3D}', 
+    'Forensics', 
+    'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTQ3YjNpYTR6eWl5YjB4MTB3ZWdhbXpvMWZyaW9zdzNzejF2em96ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2WGDUTmsB4DzFuvZ2t/giphy.gif', 
+    'Utilisez la fonction de recherche de votre navigateur (CTRL+F) pour isoler les réponses HTTP de type "200 OK".', 
+    '/challenge/military-logs'
 );
-
-INSERT INTO solves (user_id, challenge_id) VALUES 
-(1, 1),
-(1, 2), 
-(2, 1);

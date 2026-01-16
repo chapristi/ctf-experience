@@ -213,7 +213,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vault_pass'])) {
     <div class="vault-ui">
         <?php if ($flag_revealed): ?>
             <h3 style="color: green;">Coffre Ouvert</h3>
-            <p>CONTENU : <br><strong>CTF{0S1NT_D0G_M4M4_1992}</strong></p>
+            <p>CONTENU : <br><strong>CTF{0S1NT_D0G_M4M4_1993}</strong></p>
         <?php else: ?>
             <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" width="50">
             <p>Entrez le code de secours :</p>

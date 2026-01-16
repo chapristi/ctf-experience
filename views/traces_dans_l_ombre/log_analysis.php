@@ -40,11 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['flag_input'])) {
 
 <div class="terminal" id="log-terminal">
     <?php
-    for ($i = 1; $i <= 500; $i++) {
-        $ip = "192.168.1." . rand(2, 254);
+    for ($i = 1; $i <= 50000; $i++) {
+        $ip = "192.168.1." . rand(2, 256);
         $date = "16/Jan/2026:14:" . str_pad(rand(0, 59), 2, '0', STR_PAD_LEFT) . ":" . str_pad(rand(0, 59), 2, '0', STR_PAD_LEFT);
 
-        if ($i === 342) {
+        if ($i === 27341) {
             echo "<div class='log-entry'>[$date] POST /login.php HTTP/1.1 200 OK - IP: 10.0.0.42 - Agent: Xian Jiao</div>";
         } else {
             echo "<div class='log-entry'>[$date] POST /login.php HTTP/1.1 401 Unauthorized - IP: $ip - Agent: Mozilla/5.0</div>";

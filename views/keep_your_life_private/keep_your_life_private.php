@@ -182,7 +182,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <?php if ($success): ?>
             <div class="success-area">
-                <p style="color: var(--neon-green); font-weight: bold;">[✓] DÉCRYPTAGE RÉUSSI</p>
+                <p style="color: var(--neon-green); font-weight: bold;">[✓] DÉCHIFFRAGE RÉUSSI</p>
                 <p style="color: #8b949e; font-size: 0.9rem;">Accès au contenu déverrouillé :</p>
                 <code style="display: block; background: #0d1117; padding: 15px; color: #fff; margin-top: 10px; border-radius: 4px;">
                     <?= $flag ?>
@@ -190,7 +190,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         <?php else: ?>
             <form method="POST">
-                <label style="font-size: 0.7rem; color: #8b949e; display: block; margin-bottom: 10px; letter-spacing: 1px;">SÉQUENCE_DÉCRYPTAGE_REQUISE</label>
+                <label style="font-size: 0.7rem; color: #8b949e; display: block; margin-bottom: 10px; letter-spacing: 1px;">SÉQUENCE_DÉCHIFFREMENT_REQUISE</label>
+                <label style="font-size: 0.7rem; color: #8b949e; display: block; margin-bottom: 10px; letter-spacing: 1px;">SÉQUENCE_DÉCHIFFREMENT_REQUISE</label>
                 <input type="text" name="password" autocomplete="off" required placeholder="ENTRER LE MOT DE PASSE">
                 <button type="submit" class="btn-decrypt">Se connecter</button>
             </form>

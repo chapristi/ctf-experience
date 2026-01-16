@@ -4,7 +4,7 @@ $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['flag_input'])) {
     if (trim($_POST['flag_input']) === 'ExtremelySafePassword') {
-        $decrypted_flag = "DÉCRYPTAGE RÉUSSI : LES RENFORTS ARRIVENT À L'AUBE. IDENTIFICATION : CTF{C43S4R_W1TH_TH3_M1L1T4RY} ";
+        $decrypted_flag = "DÉCHIFFRAGE RÉUSSI : LES RENFORTS ARRIVENT À L'AUBE. IDENTIFICATION : CTF{C43S4R_W1TH_TH3_M1L1T4RY} ";
     } else {
         $error = "ERREUR : SÉQUENCE DE DÉCODAGE INCORRECTE.";
     }
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['flag_input'])) {
         <?php if ($decrypted_flag): ?>
             <p style="color: #00ff00;"><?= $decrypted_flag ?></p>
         <?php else: ?>
-            <p>Saisissez le message décrypté :</p>
+            <p>Saisissez le message déchiffré :</p>
             <form method="POST">
                 <input type="text" name="flag_input" autocomplete="off" placeholder="Saisissez le code secret" required>
                 <button type="submit">VALIDER LE CODE</button>

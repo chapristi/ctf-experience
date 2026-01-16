@@ -89,7 +89,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
 ),
 (
     'Interception Radio', 
-    'Nos systèmes ont capté une transmission ennemie cryptée. Utilisez vos compétences de décodage pour extraire les ordres du commandant.', 
+    'Nos systèmes ont capté une transmission ennemie chifrée. Utilisez vos compétences de décodage pour extraire les ordres du commandant.', 
     200, 
     'CTF{B453_64_M1L1T4RY_C4LL}', 
     'Crypto', 

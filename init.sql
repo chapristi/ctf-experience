@@ -38,19 +38,41 @@ INSERT INTO users (nickname) VALUES
 ('Cypher');
 
 INSERT INTO challenges (title, description, points, flag, category, picture, hint, slug) VALUES
-('Click Frenzy', 'Atteignez 100 000 clics pour forcer l''accès. Une manipulation directe de l''URL est plus rapide que l''endurance.', 100, 'CTF{U4L_M4N1PUL4T10N_15_K3Y}', 'Web', 'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 'Regardez bien les paramètres GET dans la barre d''adresse du navigateur.', '/challenge/click-frenzy'),
-
-('Keep you life private', 'Un agent a laissé un rapport sécurisé. Reconstituez le mot de passe en utilisant les indices du post-it (Osint).', 150, 'CTF{051NT_M45T3R_D0C}', 'Osint', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWQ1N2tnamdkemRpamdpdHB3aTFkMDdiYXRoY2xtdDU0aGNkZmpudyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9rRacglGbs68E/giphy.gif', 'L''ordre classique est Nom + Année + Symbole.', '/challenge/keep-your-life-private'),
-
-('Not a secure login', 'Le système de vérification des identifiants est exposé. Fouillez le code source JavaScript pour trouver la clé.', 300, 'CTF{J4V45CR1P7_15_PU8L1C}', 'Web', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3dlejN2Z3d5Z2dnZjJkNzduYzNudnBrbHhsNnpobXNsYmhwemdwdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/11fot0YzpQMA0g/giphy.gif', 'Faites un clic droit sur la page et sélectionnez "Inspecter" puis allez dans l''onglet "Sources" ou "Debugger".', '/challenge/not-secure-login'),
+(
+    'Clic, clic, re-clic !', 
+    'Atteignez 100 000 clics. Mieux vaut réfléchir que agir.', 
+    100, 
+    'CTF{U4L_M4N1PUL4T10N_15_K3Y}', 
+    'Web', 'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 
+    'Regardez bien les paramètres GET dans la barre d''adresse du navigateur.', 
+    '/challenge/click-frenzy'),
 
 (
-    'System Override', 
+    'Garde ta vie privée', 
+    'Un agent a laissé un rapport sécurisé. Reconstituez le mot de passe en utilisant les indices du post-it (Osint).', 
+    50, 
+    'CTF{051NT_M45T3R_D0C}', 
+    'Osint', 
+    'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdno4MzV1Z2V6anFyYzR0MjFyaHBrdjd4ZmY5OGFwdmZpM2F3M2k3NiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NdKVEei95yvIY/giphy.gif', 
+    'L''ordre classique est Nom + Année + Symbole.', 
+    '/challenge/keep-your-life-private'
+),
+
+(
+    'Le stagiaire gére, aparemment', 
+    'Le système de vérification des identifiants est exposé.', 
+    150, 'CTF{J4V45CR1P7_15_PU8L1C}', 
+    'Web', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3dlejN2Z3d5Z2dnZjJkNzduYzNudnBrbHhsNnpobXNsYmhwemdwdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/11fot0YzpQMA0g/giphy.gif', 
+    'Faites un clic droit sur la page et sélectionnez "Inspecter" puis allez dans l''onglet "Sources" ou "Debugger".', 
+    '/challenge/not-secure-login'
+),
+(
+    'Commenter? Oui, mais pas trop', 
     'Un administrateur négligent a laissé traîner ses identifiants. Connectez-vous au système pour récupérer le fichier secret sur le bureau.', 
-    75, 
+    100, 
     'CTF{H7ML_C0MM3N7S_R_N0T_S3CUR3}', 
     'Web', 
-    'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExam1xcGltOGE0c2V0ZHljNmxjbTRpNGFtYjJseDV0NTV4dGZ0a3U0OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pUVOeIagS1rrqsYQJe/giphy.gif', 
+    'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWtoeDF0NmM1NTl6ZnJwaDF5eDRrb3Z1OGIzeHpyZXAwamg5aXA1OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Ws6T5PN7wHv3cY8xy8/giphy.gif', 
     "L\'interface graphique n\'est qu\'une façade. Regardez ce qui la compose (CTRL+U ou F12).", 
     "/challenge/hidden_in_plain_sight"
 ),
@@ -58,7 +80,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
 (
     "L'Oubli de Marie", 
     'Marie utilise souvent des informations personnelles pour ses mots de passe. Fouillez son profil pour ouvrir son coffre-fort numérique.', 
-    125, 
+    100, 
     'CTF{0S1NT_D0G_M4M4_1992}', 
     'Osint', 
     'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTFqbmtlcDNuZnh0ZXYyZm93Y3MwcTllaDMyYjhha3R5OWd1cjI0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2FaznsStYLpCNFhwQ/giphy.gif', 
@@ -68,7 +90,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
 (
     'Interception Radio', 
     'Nos systèmes ont capté une transmission ennemie cryptée. Utilisez vos compétences de décodage pour extraire les ordres du commandant.', 
-    100, 
+    200, 
     'CTF{B453_64_M1L1T4RY_C4LL}', 
     'Crypto', 
     'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2l1ZmFrd2xhaWhhdHB0MjB4ZTZ3OWoyMnJvM2hoajBmZTA0NmJhbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bmcynfPM96sC4KOKI3/giphy.gif', 
@@ -78,7 +100,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
 (
     "Le Chiffre de l\'Empereur", 
     'Nous avons retrouvé une vieille note de la Seconde Guerre Mondiale. Elle semble utiliser un système de décalage inventé par Jules César lui-même.', 
-    100, 
+    150, 
     'CTF{C43S4R_W1TH_TH3_M1L1T4RY}', 
     'Crypto', 
     'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXlibHpndTFlOGl0bmZubjF1ZjRxMnF6ZG80YnN4aDIxNnJkaW5tdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/16AmBIzIdoWdgqqb4m/giphy.gif', 
@@ -88,7 +110,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
 (
     'Tout est au point',
     'Une image a été interceptée. Elle semble cacher la ville dans laquelle se déroulera la prochaine mission.',
-    250,
+    150,
     'CTF{LIMOGES}',
     'Stegano',
     'https://images-ext-1.discordapp.net/external/6GFN1LygOFAeJV5jRX5RLNHZFrhVtf2PcYdRi3f4ckQ/https/media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamxsNnZ6OG5oMnM3aGpkM3prbHpsN3U5YWdrcXdyNmxud24zZXJjNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/kd9BlRovbPOykLBMqX/giphy.gif',

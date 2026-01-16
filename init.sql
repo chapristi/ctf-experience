@@ -44,17 +44,17 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'CTF{U4L_M4N1PUL4T10N_15_K3Y}', 
     'Web', 
     'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 
-    'Regardez bien les paramètres GET dans la barre d''adresse du navigateur.', 
+    'Regardez bien les paramètres',
     '/challenge/click-frenzy'),
 
 (
-    'Garde ta vie privée', 
+    'Garde ta vie privée', +
     'Un agent a laissé un rapport sécurisé. Reconstituez le mot de passe en utilisant les indices du post-it (Osint).', 
     50, 
     'CTF{051NT_M45T3R_D0C}', 
     'OSINT', 
     'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdno4MzV1Z2V6anFyYzR0MjFyaHBrdjd4ZmY5OGFwdmZpM2F3M2k3NiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/NdKVEei95yvIY/giphy.gif', 
-    'L''ordre classique est Nom + Année + Symbole.', 
+    'L''ordre classique est Nom + Année',
     '/challenge/keep-your-life-private'
 ),
 
@@ -93,7 +93,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'Nos systèmes ont capté une transmission ennemie chifrée. Utilisez vos compétences de décodage pour extraire les ordres du commandant.', 
     200, 
     'CTF{B453_64_M1L1T4RY_C4LL}', 
-    'Cryptography', 
+    'Cryptographie',
     'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2l1ZmFrd2xhaWhhdHB0MjB4ZTZ3OWoyMnJvM2hoajBmZTA0NmJhbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bmcynfPM96sC4KOKI3/giphy.gif', 
     'Le texte ressemble à une soupe de lettres et de chiffres. Cherchez des codages courants comme le Base64. La fonction atob() peut vous être utile.', 
     '/challenge/interception_radio'
@@ -103,7 +103,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'Nous avons retrouvé une vieille note de la Seconde Guerre Mondiale. Elle semble utiliser un système de décalage inventé par Jules César lui-même.', 
     150, 
     'CTF{C43S4R_W1TH_TH3_M1L1T4RY}', 
-    'Cryptography', 
+    'Cryptographie',
     'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXlibHpndTFlOGl0bmZubjF1ZjRxMnF6ZG80YnN4aDIxNnJkaW5tdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/16AmBIzIdoWdgqqb4m/giphy.gif', 
     'Rappelez-vous : Décalage de 3. Si A = D, alors quelle lettre donne C ?', 
     '/challenge/caesar-military'
@@ -113,7 +113,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'Une image a été interceptée. Elle semble cacher la ville dans laquelle se déroulera la prochaine mission.',
     150,
     'CTF{LIMOGES}',
-    'Steganography',
+    'Steganographie',
     'https://images-ext-1.discordapp.net/external/6GFN1LygOFAeJV5jRX5RLNHZFrhVtf2PcYdRi3f4ckQ/https/media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamxsNnZ6OG5oMnM3aGpkM3prbHpsN3U5YWdrcXdyNmxud24zZXJjNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/kd9BlRovbPOykLBMqX/giphy.gif',
     'Faites attention à ce qu''il y a autour des points suspects.',
     '/challenge/tout-est-au-point'
@@ -123,7 +123,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     "Le serveur central a été bombardé de requêtes. Une seule a réussi à franchir nos défenses. Analysez les journaux d\'accès pour trouver la trace de l\'intrus.", 
     150, 
     'CTF{L0G_M45T3R_D3T3CT3D}', 
-    'Forensics', 
+    'Forensique',
     'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTQ3YjNpYTR6eWl5YjB4MTB3ZWdhbXpvMWZyaW9zdzNzejF2em96ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2WGDUTmsB4DzFuvZ2t/giphy.gif', 
     'Utilisez la fonction de recherche de votre navigateur (CTRL+F) pour isoler les réponses HTTP de type "200 OK".', 
     '/challenge/military-logs'

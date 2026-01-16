@@ -1,5 +1,5 @@
 <?php
-$correct_password = "Patapouf1994@";
+$correct_password = "Patapouf1994";
 $user_input = $_POST['password'] ?? '';
 $error = false;
 $success = false;

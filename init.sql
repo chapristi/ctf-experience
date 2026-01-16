@@ -72,7 +72,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'CTF{B453_64_M1L1T4RY_C4LL}', 
     'Crypto', 
     'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2l1ZmFrd2xhaWhhdHB0MjB4ZTZ3OWoyMnJvM2hoajBmZTA0NmJhbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bmcynfPM96sC4KOKI3/giphy.gif', 
-    'Le texte ressemble à une soupe de lettres et de chiffres. Cherchez des codages courants comme le Base64.', 
+    'Le texte ressemble à une soupe de lettres et de chiffres. Cherchez des codages courants comme le Base64. La fonction atob() peut vous être utile.', 
     '/interception_radio'
 );
 

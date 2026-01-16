@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['flag_input'])) {
         <?php else: ?>
             <p>SAISISSEZ LA FLAG EXTRAITE :</p>
             <form method="POST">
-                <input type="text" name="flag_input" placeholder="Entrez le code" required>
+                <input type="text" name="flag_input" autocomplete="off" placeholder="Entrez le code" required>
                 <button type="submit">EXÉCUTER</button>
             </form>
             <?php if($error) echo "<p style='color:red; font-size:0.8em;'>$error</p>"; ?>

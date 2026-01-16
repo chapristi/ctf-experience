@@ -193,7 +193,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php else: ?>
             <form method="POST">
                 <label style="font-size: 0.7rem; color: #8b949e; display: block; margin-bottom: 10px; letter-spacing: 1px;">SÉQUENCE_DÉCRYPTAGE_REQUISE</label>
-                <input type="text" name="password" required placeholder="ENTRER LE MOT DE PASSE">
+                <input type="text" name="password" autocomplete="off" required placeholder="ENTRER LE MOT DE PASSE">
                 <button type="submit" class="btn-decrypt">Se connecter</button>
             </form>
             <?php if ($error): ?>

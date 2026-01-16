@@ -136,28 +136,7 @@
     <div id="message"></div>
 </div>
 
-<script>
-    /**
-     * ATTENTION : Système d'authentification temporaire.
-     * TODO : Déplacer cette logique côté serveur après la phase de test.
-     */
-    function validateAccess() {
-        const user = document.getElementById('username').value;
-        const pass = document.getElementById('password').value;
-        const display = document.getElementById('message');
-
-        // Identifiants de test à ne pas divulguer
-        if (user === "admin_sec" && pass === "P4ssw0rd_Unbr3akabl3!") {
-            display.innerHTML = `
-                <div class="status-success">
-                    ACCÈS ACCORDÉ<br><br>
-                    FLAG : CTF{J4V45CR1P7_15_PU8L1C}
-                </div>`;
-        } else {
-            display.innerHTML = '<span class="status-error">[!] ÉCHEC D\'AUTHENTIFICATION</span>';
-        }
-    }
-</script>
+<script src="../assets/js/not_secure_login/login.js"></script>
 
 </body>
 </html>

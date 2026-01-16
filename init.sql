@@ -82,7 +82,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     "L'Oubli de Marie", 
     'Marie utilise souvent des informations personnelles pour ses mots de passe. Fouillez son profil pour ouvrir son coffre-fort numérique.', 
     100, 
-    'CTF{0S1NT_D0G_M4M4_1992}', 
+    'CTF{0S1NT_D0G_M4M4_1993}',
     'OSINT', 
     'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTFqbmtlcDNuZnh0ZXYyZm93Y3MwcTllaDMyYjhha3R5OWd1cjI0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2FaznsStYLpCNFhwQ/giphy.gif', 
     "Calculez son année de naissance en observant ses publications et n'oubliez pas le nom de son compagnon à quatre pattes.", 

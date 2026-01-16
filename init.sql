@@ -48,7 +48,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     '/challenge/click-frenzy'),
 
 (
-    'Garde ta vie privée', +
+    'Garde ta vie privée',
     'Un agent a laissé un rapport sécurisé. Reconstituez le mot de passe en utilisant les indices du post-it (Osint).', 
     50, 
     'CTF{051NT_M45T3R_D0C}', 

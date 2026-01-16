@@ -18,6 +18,8 @@ $router->map('GET', '/', function() { require __DIR__ . '/../views/home.php'; })
 
 //CHALLENGES
 //Here will be the routes for each challenge of our ctf
+$router->map('GET', '/challenge/tout-est-au-point', function() { require __DIR__ . '/../views/tout_est_au_point/tout_est_au_point.php'; });
+
 $router->map('GET', '/challenge/click-frenzy', function() { require __DIR__ . '/../views/click_frenzy/clik_frenzy.php'; });
 $router->map('GET,POST', '/challenge/keep-your-life-private', function() { require __DIR__ . '/../views/keep_your_life_private/keep_your_life_private.php'; });
 $router->map('GET', '/challenge/not-secure-login', function() { require __DIR__ . '/../views/not_secure_login/not_secure_login.php'; });

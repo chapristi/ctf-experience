@@ -59,7 +59,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
 ),
 
 (
-    'Le stagiaire gére, aparemment', 
+    'Le stagiaire gére, apparemment',
     'Le système de vérification des identifiants est exposé.', 
     150, 'CTF{J4V45CR1P7_15_PU8L1C}', 
     'Web', 

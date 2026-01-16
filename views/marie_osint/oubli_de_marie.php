@@ -174,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vault_pass'])) {
                         <div><strong>Marie Laurent</strong><br><small>21 Fevrier 2023 • 🌎</small></div>
                     </div>
                     <div class="post-text">
-                        Il faut profiter des petits momments dans la vie. Les sourires, les promenades, les rigolades, la beauté de cee que nous entoure 🎂🥂
+                        Il faut profiter des petits moments dans la vie. Les sourires, les promenades, les rigolades, la beauté de ce qui nous entoure 🎂🥂
                     </div>
                     <img src="https://images.unsplash.com/photo-1530103043960-ef38714abb15?q=80&w=1000&auto=format&fit=cro" class="post-img">
                     <div class="post-actions">❤️ 91 J'aime • 17 Commentaires</div>
@@ -198,7 +198,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vault_pass'])) {
                         <div><strong>Marie Laurent</strong><br><small>28 décembre 2022 • 🌎</small></div>
                     </div>
                     <div class="post-text">
-                        Vivre la vie dans son max, c'est ce que j'avais promis a moi même dans mes ving ans, je ne veux faire plaisir a pesone, juste rendre heureuse ma version plus jeune. ❤️
+                        Vivre la vie dans son max, c'est ce que j'avais promis a moi même dans mes vingt ans, je ne veux faire plaisir à personne, juste rendre heureuse ma version plus jeune. ❤️
                     </div>
                     <img src="https://images.unsplash.com/photo-1516939884455-1445c8652f83?q=80&w=1000&auto=format&fit=crop" class="post-img">
                     <div class="post-actions">❤️ 153 J'aime • 74 Commentaires</div>

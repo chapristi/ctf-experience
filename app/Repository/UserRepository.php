@@ -29,7 +29,7 @@ class UserRepository {
 
     public function getScoreboard(): array {
         $sql = "SELECT u.id, u.nickname, u.score,
-                (SELECT COUNT(*) FROM solves s WHERE s.user_id = u.id) as solve_count
+                (SELECT COUNT(*) FROM solves s WHERE s.id = u.id) as solve_count
                 FROM users u
                 ORDER BY u.score DESC, u.nickname ASC";
                 

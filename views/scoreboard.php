@@ -109,7 +109,7 @@
                     <td><span class="pseudo"><?= htmlspecialchars($user['nickname']) ?></span></td>
                     
                     <td class="challenges-resolved">
-                        <?= $user->solve_count ?? 'N/A' ?>
+                        <?= $user['solve_count'] ?? 'N/A' ?>
                     </td>
                     
                     <td class="points-total"><?= $user['score'] ?> PTS</td>

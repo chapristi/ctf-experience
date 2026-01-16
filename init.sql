@@ -38,11 +38,11 @@ INSERT INTO users (nickname) VALUES
 ('Cypher');
 
 INSERT INTO challenges (title, description, points, flag, category, picture, hint, slug) VALUES
-('Click Frenzy', 'Atteignez 100 000 clics pour forcer l''accès. Une manipulation directe de l''URL est plus rapide que l''endurance.', 100, 'CTF{U4L_M4N1PUL4T10N_15_K3Y}', 'Web', 'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 'Regardez bien les paramètres GET dans la barre d''adresse du navigateur.', '/click-frenzy'),
+('Click Frenzy', 'Atteignez 100 000 clics pour forcer l''accès. Une manipulation directe de l''URL est plus rapide que l''endurance.', 100, 'CTF{U4L_M4N1PUL4T10N_15_K3Y}', 'Web', 'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 'Regardez bien les paramètres GET dans la barre d''adresse du navigateur.', '/challenge/click-frenzy'),
 
-('Keep you life private', 'Un agent a laissé un rapport sécurisé. Reconstituez le mot de passe en utilisant les indices du post-it (Osint).', 150, 'CTF{051NT_M45T3R_D0C}', 'Osint', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWQ1N2tnamdkemRpamdpdHB3aTFkMDdiYXRoY2xtdDU0aGNkZmpudyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9rRacglGbs68E/giphy.gif', 'L''ordre classique est Nom + Année + Symbole.', '/keep-your-life-private'),
+('Keep you life private', 'Un agent a laissé un rapport sécurisé. Reconstituez le mot de passe en utilisant les indices du post-it (Osint).', 150, 'CTF{051NT_M45T3R_D0C}', 'Osint', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWQ1N2tnamdkemRpamdpdHB3aTFkMDdiYXRoY2xtdDU0aGNkZmpudyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9rRacglGbs68E/giphy.gif', 'L''ordre classique est Nom + Année + Symbole.', '/challenge/keep-your-life-private'),
 
-('Not a secure login', 'Le système de vérification des identifiants est exposé. Fouillez le code source JavaScript pour trouver la clé.', 300, 'CTF{J4V45CR1P7_15_PU8L1C}', 'Web', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3dlejN2Z3d5Z2dnZjJkNzduYzNudnBrbHhsNnpobXNsYmhwemdwdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/11fot0YzpQMA0g/giphy.gif', 'Faites un clic droit sur la page et sélectionnez "Inspecter" puis allez dans l''onglet "Sources" ou "Debugger".', '/not-secure-login'),
+('Not a secure login', 'Le système de vérification des identifiants est exposé. Fouillez le code source JavaScript pour trouver la clé.', 300, 'CTF{J4V45CR1P7_15_PU8L1C}', 'Web', 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3dlejN2Z3d5Z2dnZjJkNzduYzNudnBrbHhsNnpobXNsYmhwemdwdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/11fot0YzpQMA0g/giphy.gif', 'Faites un clic droit sur la page et sélectionnez "Inspecter" puis allez dans l''onglet "Sources" ou "Debugger".', '/challenge/not-secure-login'),
 
 (
     'System Override', 
@@ -52,7 +52,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'Web', 
     'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExam1xcGltOGE0c2V0ZHljNmxjbTRpNGFtYjJseDV0NTV4dGZ0a3U0OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pUVOeIagS1rrqsYQJe/giphy.gif', 
     "L\'interface graphique n\'est qu\'une façade. Regardez ce qui la compose (CTRL+U ou F12).", 
-    "/hidden_in_plain_sight"
+    "/challenge/hidden_in_plain_sight"
 ),
 
 (
@@ -63,7 +63,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'Osint', 
     'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTFqbmtlcDNuZnh0ZXYyZm93Y3MwcTllaDMyYjhha3R5OWd1cjI0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2FaznsStYLpCNFhwQ/giphy.gif', 
     "Calculez son année de naissance en observant ses publications et n'oubliez pas le nom de son compagnon à quatre pattes.", 
-    '/marie-osint'
+    '/challenge/marie-osint'
 ),
 (
     'Interception Radio', 
@@ -73,7 +73,17 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'Crypto', 
     'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2l1ZmFrd2xhaWhhdHB0MjB4ZTZ3OWoyMnJvM2hoajBmZTA0NmJhbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bmcynfPM96sC4KOKI3/giphy.gif', 
     'Le texte ressemble à une soupe de lettres et de chiffres. Cherchez des codages courants comme le Base64. La fonction atob() peut vous être utile.', 
-    '/interception_radio'
+    '/challenge/interception_radio'
+),
+(
+    "Le Chiffre de l\'Empereur", 
+    'Nous avons retrouvé une vieille note de la Seconde Guerre Mondiale. Elle semble utiliser un système de décalage inventé par Jules César lui-même.', 
+    100, 
+    'CTF{C43S4R_W1TH_TH3_M1L1T4RY}', 
+    'Crypto', 
+    'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXlibHpndTFlOGl0bmZubjF1ZjRxMnF6ZG80YnN4aDIxNnJkaW5tdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/16AmBIzIdoWdgqqb4m/giphy.gif', 
+    'Rappelez-vous : Décalage de 3. Si A = D, alors quelle lettre donne C ?', 
+    '/challenge/caesar-military'
 );
 
 INSERT INTO solves (user_id, challenge_id) VALUES 

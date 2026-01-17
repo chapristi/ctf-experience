@@ -22,13 +22,13 @@ class ChallengeController extends BaseController{
     public function challengeDetails() {
         $id = $_GET['challenge_id'] ?? null;
         if (!$id) {
-            die("Erreur : Aucun ID de mission fourni.");
+            header('Location: /404');
         }
 
         $data = $this->crepo->getChallenge($id);
 
         if (!$data) {
-            die("Erreur : Mission introuvable.");
+            header('Location: /404');
         }
 
         $this->render('challenge_details', ['challenge' => $data]);

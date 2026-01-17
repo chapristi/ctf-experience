@@ -85,7 +85,7 @@
     <div class="glitch-line"></div>
     <p>Alerte : Coordonnées invalides</p>
     <p>Le fichier demandé a été déplacé ou supprimé du serveur.</p>
-    <a href="/">Retour au terminal</a>
+    <a href="/challenges">Retour au terminal</a>
 </div>
 </body>
 </html>

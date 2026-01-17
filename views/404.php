@@ -6,7 +6,7 @@
     <style>
         body {
             background-color: #0d1117;
-            color: #ff4d4d; /* Rouge pour l'alerte */
+            color: #ff4d4d;
             font-family: 'Consolas', monospace;
             display: flex;
             justify-content: center;

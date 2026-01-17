@@ -110,7 +110,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
 ),
 (
     'Tout est au point',
-    'Une image a été interceptée. Elle semble cacher la ville dans laquelle se déroulera la prochaine mission.',
+    'Une image a été interceptée. Elle semble cacher la ville dans laquelle se déroulera la prochaine mission.\n Format du  flag : CTF{VILLE}',
     150,
     'CTF{LIMOGES}',
     'Steganographie',

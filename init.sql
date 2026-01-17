@@ -45,7 +45,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'Web', 
     'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 
     'Votre navigation sur une page web ne se fait pas seulement par l’interface.',
-    '/challenge/click-frenzy'),
+    '/challenge/click-frenzy?clicks=0'),
 
 (
     'Garde ta vie privée',

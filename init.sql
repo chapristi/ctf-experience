@@ -135,6 +135,6 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'CTF{S3CUR1TY_QU3ST1ONS_4R3_W34K}', 
     'OSINT', 
     "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGpibjJrcnZkejVkanJydG4ydWh0cW5mb2g2aXl1d2t0anY0dmJnciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eImrJKnOmuBDmqXNUj/giphy.gif", 
-    "Regarde bien les infos donnés", 
+    "Regardez bien les informations mises à disposition",
     '/challenge/security-bypass'
 );

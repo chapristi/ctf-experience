@@ -74,7 +74,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'CTF{H7ML_C0MM3N7S_R_N0T_S3CUR3}', 
     'Web', 
     'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWtoeDF0NmM1NTl6ZnJwaDF5eDRrb3Z1OGIzeHpyZXAwamg5aXA1OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Ws6T5PN7wHv3cY8xy8/giphy.gif', 
-    "L\'interface graphique n\'est qu\'une façade. Regardez ce qui la compose (CTRL+U ou F12).", 
+    "L\'interface graphique n\'est qu\'une façade. Regardez ce qui la compose.", 
     "/challenge/hidden_in_plain_sight"
 ),
 
@@ -105,7 +105,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'CTF{C43S4R_W1TH_TH3_M1L1T4RY}', 
     'Cryptographie',
     'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXlibHpndTFlOGl0bmZubjF1ZjRxMnF6ZG80YnN4aDIxNnJkaW5tdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/16AmBIzIdoWdgqqb4m/giphy.gif', 
-    'Rappelez-vous : Décalage de 3. Si A = D, alors quelle lettre donne C ?', 
+    'Si A = D, alors quelle lettre donne C ?', 
     '/challenge/caesar-military'
 ),
 (
@@ -127,4 +127,14 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTQ3YjNpYTR6eWl5YjB4MTB3ZWdhbXpvMWZyaW9zdzNzejF2em96ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2WGDUTmsB4DzFuvZ2t/giphy.gif', 
     'Utilisez la fonction de recherche de votre navigateur (CTRL+F) pour isoler les réponses HTTP de type "200 OK".', 
     '/challenge/military-logs'
+),
+(
+    'Le Maillon Faible', 
+    'Jean-Pierre a sécurisé son coffre avec des questions personnelles. Fouillez son bureau pour usurper son identité et réinitialiser son accès.', 
+    150, 
+    'CTF{S3CUR1TY_QU3ST1ONS_4R3_W34K}', 
+    'OSINT', 
+    "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGpibjJrcnZkejVkanJydG4ydWh0cW5mb2g2aXl1d2t0anY0dmJnciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eImrJKnOmuBDmqXNUj/giphy.gif", 
+    "Regarde bien les infos donnés", 
+    '/challenge/security-bypass'
 );

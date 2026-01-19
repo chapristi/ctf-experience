@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vault_pass'])) {
         }
 
         /* Icons */
-        .desktop-icons { padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+        .desktop-icons { padding: 20px; display: flex; flex-direction: column; gap: 20px; position: relative; z-index: 5; }
         .icon { 
             width: 70px; text-align: center; color: white; cursor: pointer;
             text-shadow: 1px 1px 3px black; font-size: 0.8em;
@@ -34,66 +34,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vault_pass'])) {
         /* Windows */
         .window {
             position: absolute; background: white; border: 1px solid #999;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: none; /* Hidden by default */
-            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: none;
+            flex-direction: column; z-index: 10;
         }
         .title-bar { 
-            background: #eee; padding: 5px 10px; display: flex; 
+            background: #eee; padding: 8px 10px; display: flex; 
             justify-content: space-between; font-size: 0.8em; cursor: move;
+            user-select: none; border-bottom: 1px solid #ddd;
         }
-        .close { cursor: pointer; color: red; font-weight: bold; }
+        .close { cursor: pointer; color: red; font-weight: bold; padding: 0 5px; }
 
         /* Fake Facebook App */
-        #fb-app { top: 50px; left: 150px; width: 1000px; height: 550px; }
-        .fb-header { background: var(--fb-blue); color: white; padding: 10px; font-weight: bold; }
-        .fb-content { overflow-y: auto; padding: 15px; background: #f0f2f5; height: 100%; }
-        .post { background: white; padding: 10px; margin-bottom: 15px; border-radius: 8px; color: black; }
-        .dog-img { width: 100%; border-radius: 5px; }
+        #fb-app { top: 50px; left: 100px; width: 900px; height: 600px; }
+        .fb-wrapper { background: #f0f2f5; height: 100%; overflow-y: auto; color: #1c1e21; }
+
+        /* Layout FB */
+        .fb-header-container { background: white; border-bottom: 1px solid #ddd; }
+        .fb-cover { height: 180px; background-size: cover; background-position: center; }
+        .fb-profile-strip { display: flex; padding: 0 30px; transform: translateY(-30px); align-items: flex-end; }
+        .fb-profile-pic { width: 130px; height: 130px; border-radius: 50%; border: 4px solid white; background-size: cover; }
+        .fb-name-box { margin-left: 20px; padding-bottom: 10px; }
+        .fb-name-box h1 { margin: 0; font-size: 1.8em; }
+        .fb-nav-mock { display: flex; gap: 20px; padding: 10px 30px; border-top: 1px solid #eee; font-weight: 600; color: #65676b; font-size: 0.9em; }
+
+        .fb-body { display: grid; grid-template-columns: 300px 1fr; gap: 15px; padding: 15px; }
+        .fb-card { background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        .fb-intro-list { list-style: none; padding: 0; margin: 10px 0; font-size: 0.9em; }
+        .fb-intro-list li { margin-bottom: 8px; }
+        .fb-photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+        .fb-photo-grid img { width: 100%; height: 70px; object-fit: cover; border-radius: 4px; }
+
+        /* Posts */
+        .post-header { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; }
+        .mini-avatar { width: 40px; height: 40px; border-radius: 50%; }
+        .post-img { width: calc(100% + 30px); margin-left: -15px; margin-top: 10px; display: block; }
+        .post-actions { border-top: 1px solid #eee; margin-top: 10px; padding-top: 10px; color: #65676b; font-size: 0.8em; }
 
         /* Vault App */
-        #vault-app { top: 150px; left: 400px; width: 300px; padding: 20px; border: 2px solid var(--win-blue); }
-        .vault-ui { text-align: center; color: black; }
-
-        .fb-wrapper {
-    background: #f0f2f5;
-    height: 550px;
-    overflow-y: auto;
-    color: #1c1e21;
-    }
-
-    /* Header */
-    .fb-header-container { background: white; border-bottom: 1px solid #ddd; }
-    .fb-cover { height: 180px; background-size: cover; background-position: center; }
-    .fb-profile-strip { 
-        display: flex; padding: 0 30px; transform: translateY(-30px); 
-        align-items: flex-end; 
-    }
-    .fb-profile-pic { 
-        width: 130px; height: 130px; border-radius: 50%; 
-        border: 4px solid white; background-size: cover; 
-    }
-    .fb-name-box { margin-left: 20px; padding-bottom: 10px; }
-    .fb-name-box h1 { margin: 0; font-size: 1.8em; }
-    .fb-nav-mock { 
-        display: flex; gap: 20px; padding: 10px 30px; 
-        border-top: 1px solid #eee; font-weight: 600; color: #65676b;
-    }
-
-    /* Layout */
-    .fb-body { display: grid; grid-template-columns: 350px 1fr; gap: 15px; padding: 15px; }
-    .fb-card { background: white; border-radius: 8px; padding: 15px; margin-bottom: 15px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
-
-    /* Left Col */
-    .fb-intro-list { list-style: none; padding: 0; }
-    .fb-intro-list li { margin-bottom: 10px; font-size: 0.9em; }
-    .fb-photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-top: 10px; }
-    .fb-photo-grid img { width: 100%; height: 80px; object-fit: cover; border-radius: 4px; }
-
-    /* Timeline */
-    .post-header { display: flex; gap: 10px; margin-bottom: 10px; align-items: center; }
-    .mini-avatar { width: 40px; height: 40px; border-radius: 50%; }
-    .post-img { width: calc(100% + 30px); margin-left: -15px; margin-top: 10px; }
-    .post-actions { border-top: 1px solid #eee; margin-top: 10px; padding-top: 10px; color: #65676b; font-size: 0.85em; }
+        #vault-app { top: 150px; left: 450px; width: 320px; padding-bottom: 20px; border: 1px solid var(--win-blue); }
+        .vault-ui { text-align: center; color: black; padding: 20px; }
+        .vault-ui input { width: 80%; padding: 8px; margin: 10px 0; border: 1px solid #ccc; }
+        .vault-ui button { background: var(--win-blue); color: white; border: none; padding: 8px 15px; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -126,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vault_pass'])) {
                 </div>
             </div>
             <div class="fb-nav-mock">
-                <span>Publications</span> <span>À propos</span> <span>Amis</span> <span>Photos</span> <span>Plus</span>
+                <span>Publications</span> <span>À propos</span> <span>Amis</span> <span>Photos</span>
             </div>
         </div>
 
@@ -140,17 +121,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vault_pass'])) {
                         <li>🎓 A étudié à <strong>IUT du Limousin</strong></li>
                     </ul>
                 </div>
-
                 <div class="fb-card">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <h3>Photos</h3>
-                        <a href="#" style="color: #1877F2; font-size: 0.8em; text-decoration:none;">Voir tout</a>
-                    </div>
+                    <h3>Photos</h3>
                     <div class="fb-photo-grid">
                         <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=150" alt="Dog">
                         <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=150" alt="Party">
                         <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=150" alt="Lake">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150" alt="Me">
                     </div>
                 </div>
             </div>
@@ -213,12 +189,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vault_pass'])) {
     <div class="vault-ui">
         <?php if ($flag_revealed): ?>
             <h3 style="color: green;">Coffre Ouvert</h3>
-            <p>CONTENU : <br><strong>CTF{0S1NT_D0G_M4M4_1993}</strong></p>
+            <p><strong>CTF{0S1NT_D0G_M4M4_1993}</strong></p>
         <?php else: ?>
             <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" width="50">
-            <p>Entrez le code de secours :</p>
             <form method="POST">
-                <input type="password" name="vault_pass" placeholder="********">
+                <input type="password" name="vault_pass" placeholder="Mot de passe">
                 <button type="submit">DÉVERROUILLER</button>
             </form>
             <?php if($error) echo "<p style='color:red; font-size:0.7em;'>$error</p>"; ?>
@@ -227,8 +202,55 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['vault_pass'])) {
 </div>
 
 <script>
-    function openApp(id) { document.getElementById(id).style.display = 'flex'; }
+    function openApp(id) { 
+        const win = document.getElementById(id);
+        win.style.display = 'flex'; 
+        bringToFront(win);
+    }
     function closeApp(id) { document.getElementById(id).style.display = 'none'; }
+
+    let highestZ = 10;
+    function bringToFront(win) {
+        highestZ++;
+        win.style.zIndex = highestZ;
+    }
+    
+    document.querySelectorAll('.window').forEach(win => {
+        const titleBar = win.querySelector('.title-bar');
+        let isDragging = false;
+        let startX, startY, initialLeft, initialTop;
+
+        titleBar.addEventListener('mousedown', (e) => {
+            if (e.target.classList.contains('close')) return;
+            
+            isDragging = true;
+            bringToFront(win);
+            
+            startX = e.clientX;
+            startY = e.clientY;
+            initialLeft = win.offsetLeft;
+            initialTop = win.offsetTop;
+            
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', stopDrag);
+        });
+
+        function drag(e) {
+            if (!isDragging) return;
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+            win.style.left = (initialLeft + dx) + 'px';
+            win.style.top = (initialTop + dy) + 'px';
+        }
+
+        function stopDrag() {
+            isDragging = false;
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', stopDrag);
+        }
+
+        win.addEventListener('mousedown', () => bringToFront(win));
+    });
 </script>
 
 </body>

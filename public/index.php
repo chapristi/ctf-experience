@@ -38,7 +38,8 @@ $router->map('GET, POST', '/challenge/caesar-military', function() { require __D
 $router->map('GET', '/challenge/tout-est-au-point', function() { require __DIR__ . '/../views/tout_est_au_point/tout_est_au_point.php'; });
 //MILITARY_LOGS
 $router->map('GET, POST', '/challenge/military-logs', function() { require __DIR__ . '/../views/traces_dans_l_ombre/log_analysis.php'; });
-
+//LE_MAILLON_FAIBLE
+$router->map('GET, POST', '/challenge/security-bypass', function() { require __DIR__ . '/../views/security_bypass/le_maillon_faible.php'; });
 
 // API
 $router->map('POST', '/auth/login', function() use ($db) { (new \App\Controller\AuthController($db))->login(); });

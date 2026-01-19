@@ -91,11 +91,11 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
 (
     'Interception Radio', 
     'Nos systèmes ont capté une transmission ennemie chifrée. Utilisez vos compétences de décodage pour extraire les ordres du commandant.', 
-    200, 
+    250,
     'CTF{B453_64_M1L1T4RY_C4LL}', 
     'Cryptographie',
     'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2l1ZmFrd2xhaWhhdHB0MjB4ZTZ3OWoyMnJvM2hoajBmZTA0NmJhbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bmcynfPM96sC4KOKI3/giphy.gif', 
-    'Le texte ressemble à une soupe de lettres et de chiffres. Cherchez des codages courants comme le Base64. La fonction atob() peut vous être utile.', 
+    'Cette chaîne ressemble à un système d’encodage dont le padding est le caractère =.',
     '/challenge/interception_radio'
 ),
 (
@@ -105,7 +105,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'CTF{C43S4R_W1TH_TH3_M1L1T4RY}', 
     'Cryptographie',
     'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXlibHpndTFlOGl0bmZubjF1ZjRxMnF6ZG80YnN4aDIxNnJkaW5tdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/16AmBIzIdoWdgqqb4m/giphy.gif', 
-    'Si A = D, alors quelle lettre donne C ?', 
+    'Si A = D et B = E, alors quelle lettre donne C ?',
     '/challenge/caesar-military'
 ),
 (
@@ -125,7 +125,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'CTF{L0G_M45T3R_D3T3CT3D}', 
     'Forensique',
     'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTQ3YjNpYTR6eWl5YjB4MTB3ZWdhbXpvMWZyaW9zdzNzejF2em96ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2WGDUTmsB4DzFuvZ2t/giphy.gif', 
-    'Utilisez la fonction de recherche de votre navigateur (CTRL+F) pour isoler les réponses HTTP de type "200 OK".', 
+    'Une ligne ne semble pas retourner le même code que les autres ; trouvez laquelle.',
     '/challenge/military-logs'
 ),
 (

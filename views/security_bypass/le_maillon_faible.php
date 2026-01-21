@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <img src="https://cdn-icons-png.flaticon.com/512/337/337948.png" alt="JPG">
         Mistigri_vacances.jpg
     </div>
-    <div class="icon" onclick="openApp('vault-win')">
+    <div class="icon" onclick="openApp('vault-win')" >
         <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" alt="Vault">
         SECRET.exe
     </div>
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="icon">
         <img src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png" alt="Trash">
         Corbeille
-    </div>
+    </div> 
 </div>
 
 <div id="cv-win" class="window" style="top: 30px; left: 80px; width: 600px;">
@@ -145,8 +145,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php if ($step === 'login'): ?>
             <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" width="60">
             <h3>Fichier Verrouillé</h3>
-            <input type="password" placeholder="Mot de passe" disabled>
-            <button disabled>Connexion</button>
+            <input id="pwd-field" type="password" placeholder="Mot de passe">
+            <span style="color : red; background-color : pink; width : 100px; display : none;" id="invalid-pwd">Mot de passe incorrect !!!</span>
+            <button id="connection-button" onclick="validatePassword('invalid-pwd', 'pwd-field')">Connexion</button>
             <span class="forgot-link" onclick="showForgot()">Mot de passe oublié ?</span>
         <?php elseif ($step === 'forgot' || $step === 'success'): ?>
             <?php if ($step === 'forgot'): ?>
@@ -223,6 +224,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         });
         win.addEventListener('mousedown', () => bringToFront(win));
     });
+
+    function validatePassword(id, field_id) { 
+        document.getElementById(id).style.display = '';
+        document.getElementById(field_id).style.border = '2px solid red'; 
+        }
 </script>
 
 </body>

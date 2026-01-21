@@ -33,8 +33,8 @@ CREATE TABLE IF NOT EXISTS solves (
 ) ENGINE=InnoDB;
 
 INSERT INTO users (nickname, score) VALUES 
-('azle1xv', 500),
-('chapristi', 500);
+('azle1xv', 724),
+('chapristi', 555);
 
 INSERT INTO challenges (title, description, points, flag, category, picture, hint, slug) VALUES
 (
@@ -125,7 +125,7 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'CTF{L0G_M45T3R_D3T3CT3D}', 
     'Forensique',
     'https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTQ3YjNpYTR6eWl5YjB4MTB3ZWdhbXpvMWZyaW9zdzNzejF2em96ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2WGDUTmsB4DzFuvZ2t/giphy.gif', 
-    'Utilisez la fonction de recherche de votre navigateur (CTRL+F) pour isoler les réponses HTTP de type "200 OK".', 
+    'Ça doit être OK si tu regardes bien.', 
     '/challenge/military-logs'
 ),
 (
@@ -135,6 +135,6 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'CTF{S3CUR1TY_QU3ST1ONS_4R3_W34K}', 
     'OSINT', 
     "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGpibjJrcnZkejVkanJydG4ydWh0cW5mb2g2aXl1d2t0anY0dmJnciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eImrJKnOmuBDmqXNUj/giphy.gif", 
-    "Regarde bien les infos donnés", 
+    "On ne se rend même pas compte du point auquel on s'expose en publique", 
     '/challenge/security-bypass'
 );

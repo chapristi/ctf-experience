@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\UserRepository;
+use App\Repository\UserRepository;
 use PDO;
 
 class UserController {
@@ -12,17 +12,12 @@ class UserController {
     private UserRepository $repository;
 
     /**
-     * Injeta a conexão da base de dados no repositório
      * * @param PDO $db
      */
     public function __construct(PDO $db) {
         $this->repository = new UserRepository($db);
     }
 
-    /**
-     * Returns the list of users and their score
-     * Route: GET /api/scoreboard
-     */
     public function index(): void {
         header('Content-Type: application/json');
 

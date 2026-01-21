@@ -154,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h4 style="color:var(--win-blue)">Réinitialisation du compte</h4>
                 <p style="font-size:0.8em;">Répondez aux questions de sécurité pour accéder au coffre.</p>
                 <?php if($error) echo "<p style='color:red; font-size:0.8em;'>$error</p>"; ?>
-                <form method="POST">
+                <form method="POST" autocomplete="off">
                     <input type="hidden" name="action" autocomplete="off" value="check_questions">
                     <label style="font-size:0.7em; display:block; text-align:left;">Nom de votre premier chat ?</label>
                     <input type="text" name="q1" autocomplete="off" placeholder="Réponse 1" required>

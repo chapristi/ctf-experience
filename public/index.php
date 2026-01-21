@@ -40,6 +40,8 @@ $router->map('GET', '/challenge/tout-est-au-point', function() { require __DIR__
 $router->map('GET, POST', '/challenge/military-logs', function() { require __DIR__ . '/../views/traces_dans_l_ombre/log_analysis.php'; });
 //LE_MAILLON_FAIBLE
 $router->map('GET, POST', '/challenge/security-bypass', function() { require __DIR__ . '/../views/security_bypass/le_maillon_faible.php'; });
+//GEO_PIVOTING
+$router->map('GET, POST', '/challenge/geo-pivoting', function() { require __DIR__ . '/../views/pivotement_geographique/geo_pivoting.php'; });
 
 // API
 $router->map('POST', '/auth/login', function() use ($db) { (new \App\Controller\AuthController($db))->login(); });

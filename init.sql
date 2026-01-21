@@ -137,4 +137,14 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGpibjJrcnZkejVkanJydG4ydWh0cW5mb2g2aXl1d2t0anY0dmJnciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eImrJKnOmuBDmqXNUj/giphy.gif", 
     "On ne se rend même pas compte du point auquel on s'expose en publique", 
     '/challenge/security-bypass'
+),
+(
+    "L\'Infiltrée du Pays", 
+    "Sophie a disparu après sa mission au Mozambique. Sa seule trace est une photo prise depuis la voiture dans la quelle elle était. Identifiez sa position exacte pour débloquer le message.", 
+    200, 
+    'CTF{M4PU70_S7R33T5_2025_OS1NT}', 
+    'OSINT', 
+    'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGsxNHU1aGc5bGlpNWZyNm9na2Zobm10ZDN5bWdqOTNpcTM3a2lzNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oxHQHzFo3g5oYAZhe/giphy.gif', 
+    "Utilises la recherche internet pour trouver ces informations", 
+    '/challenge/geo-pivoting'
 );

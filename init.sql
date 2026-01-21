@@ -46,7 +46,6 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'https://c.tenor.com/HrfmNIl6TxIAAAAd/tenor.gif', 
     'Votre navigation sur une page web ne se fait pas seulement par l’interface.',
     '/challenge/click-frenzy?clicks=0'),
-
 (
     'Garde ta vie privée',
     'Un agent a laissé un rapport sécurisé. Reconstituez le mot de passe en utilisant les indices du post-it (Osint).', 
@@ -57,7 +56,6 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'Essayez de concaténer les informations que vous avez.',
     '/challenge/keep-your-life-private'
 ),
-
 (
     'Le stagiaire gére, apparemment',
     'Le système de vérification des identifiants a était codé par l''IA...',
@@ -77,7 +75,6 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     "L\'interface graphique n\'est qu\'une façade. Regardez ce qui la compose.", 
     "/challenge/hidden_in_plain_sight"
 ),
-
 (
     "L'Oubli de Marie", 
     'Marie utilise souvent des informations personnelles pour ses mots de passe. Fouillez son profil pour ouvrir son coffre-fort numérique.', 
@@ -136,8 +133,10 @@ INSERT INTO challenges (title, description, points, flag, category, picture, hin
     'OSINT', 
     "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGpibjJrcnZkejVkanJydG4ydWh0cW5mb2g2aXl1d2t0anY0dmJnciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eImrJKnOmuBDmqXNUj/giphy.gif", 
     "Tout ne se passe pas toujours sur la page de connexion",
-    '/challenge/security-bypass'),
-("L\'Infiltrée du Pays",
+    '/challenge/security-bypass'
+),
+(
+    "L\'Infiltrée du Pays",
     "Sophie a disparu après sa mission au Mozambique. Sa seule trace est une photo prise depuis la voiture dans la quelle elle était. Identifiez sa position exacte pour débloquer le message. Pour ce challenge la recherche internet est autorisée",
     200, 
     'CTF{M4PU70_S7R33T5_2025_OS1NT}', 

@@ -61,11 +61,11 @@
 
         .pseudo {
             font-weight: bold;
-            color: #39ff14;
+            color: #00d4ff;
         }
 
         .points-total {
-            color: #39ff14;
+            color: #00d4ff;
             font-weight: bold;
 
         }
@@ -79,7 +79,7 @@
             color: #8b949e;
             text-decoration: none;
         }
-        .back-link:hover { color: #39ff14; }
+        .back-link:hover { color: #00d4ff; }
     </style>
 </head>
 <body>
@@ -88,7 +88,7 @@
     <a href="/challenges" class="back-link"> < Retour au terminal </a>
 
     <header style="text-align: center; margin-bottom: 30px;">
-        <h1 style="color: #39ff14; margin: 0;">CLASSEMENT GÉNÉRAL</h1>
+        <h1 style="color: #00d4ff; margin: 0;">CLASSEMENT GÉNÉRAL</h1>
         <p style="color: #8b949e;">Les meilleurs agents de l'opération</p>
     </header>
 

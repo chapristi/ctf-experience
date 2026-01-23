@@ -5,132 +5,141 @@
     <title>Missions Disponibles</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-            background-color: #0d1117; /* Assurer le fond sombre */
-            color: #e6edf3;
-            font-family: 'Consolas', monospace;
-        }
+    body {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        background-color: #050a14; /* Deeper navy blue */
+        color: #e0f2ff; /* Soft blue-white text */
+        font-family: 'Consolas', monospace;
+    }
 
-        /* Bouton Déconnexion en haut à droite de l'écran */
-        .btn-signout {
-            position: fixed; /* Reste en haut même si on scrolle */
-            top: 20px;
-            right: 20px;
-            color: #ff4d4d;
-            text-decoration: none;
-            border: 1px solid #ff4d4d;
-            padding: 8px 15px;
-            border-radius: 4px;
-            transition: all 0.3s;
-            z-index: 1000; /* Passe au dessus de tout */
-            background: rgba(13, 17, 23, 0.8); /* Fond semi-transparent */
-        }
+    /* Signout Button - Red accent kept for warnings/logout, but refined */
+    .btn-signout {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        color: #ff4d4d;
+        text-decoration: none;
+        border: 1px solid #ff4d4d;
+        padding: 8px 15px;
+        border-radius: 4px;
+        transition: all 0.3s;
+        z-index: 1000;
+        background: rgba(5, 10, 20, 0.8);
+    }
 
-        .btn-signout:hover {
-            background-color: #ff4d4d;
-            color: #0d1117;
-            box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
-        }
+    .btn-signout:hover {
+        background-color: #ff4d4d;
+        color: #050a14;
+        box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+    }
 
-        header {
-            text-align: center;
-            margin: 80px 0 40px 0; /* Plus d'espace en haut pour éviter le bouton */
-        }
+    header {
+        text-align: center;
+        margin: 80px 0 40px 0;
+    }
 
-        .grid {
-            display: flex;
-            flex-wrap: wrap; /* Permet d'aller à la ligne si trop de cartes */
-            justify-content: center;
-            gap: 25px;
-            padding: 20px;
-        }
+    header h1 {
+        color: #00d4ff; /* Electric Cyan */
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    }
 
-        .card {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 10px;
-            padding: 20px;
-            transition: transform 0.3s, border-color 0.3s;
-            text-align: center;
-            width: 350px; /* Largeur fixe pour tes cartes */
-        }
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        padding: 20px;
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #39ff14;
-        }
+    .card {
+        background: #0d1624; /* Dark blue-grey card */
+        border: 1px solid #1e3a5f; /* Steel blue border */
+        border-radius: 10px;
+        padding: 20px;
+        transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        text-align: center;
+        width: 350px;
+    }
 
-        .card img {
-            width: 100%; /* Utilise toute la largeur de la card */
-            height: 180px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: #00d4ff; /* Cyan highlight on hover */
+        box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
+    }
 
-        .category {
-            display: inline-block;
-            background-color: #30363d;
-            color: #39ff14;
-            font-size: 0.75em;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 5px 15px;
-            border-radius: 20px;
-            border: 1px solid #39ff14;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        /* Optional: slight blue tint on images */
+        filter: brightness(0.9) contrast(1.1);
+    }
 
-        .points {
-            color: #39ff14;
-            font-weight: bold;
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
+    .category {
+        display: inline-block;
+        background-color: #1e3a5f;
+        color: #00d4ff;
+        font-size: 0.75em;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 5px 15px;
+        border-radius: 20px;
+        border: 1px solid #00d4ff;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+    }
 
-        .btn-play {
-            display: block; /* Prend toute la largeur */
-            margin-top: 15px;
-            padding: 12px;
-            background: #39ff14;
-            color: #0d1117;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: opacity 0.3s;
-        }
+    .points {
+        color: #00d4ff; /* Cyan points */
+        font-weight: bold;
+        font-size: 1.2em;
+        margin: 10px 0;
+    }
 
-        .btn-play:hover {
-            opacity: 0.9;
-        }
+    .btn-play {
+        display: block;
+        margin-top: 15px;
+        padding: 12px;
+        background: #00d4ff; /* Bright blue button */
+        color: #050a14;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s, opacity 0.3s;
+    }
 
-        .btn-scoreboard {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            color: #39ff14;
-            text-decoration: none;
-            border: 1px solid #39ff14;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
+    .btn-play:hover {
+        background-color: #00b4db;
+        opacity: 1;
+    }
 
-        .btn-scoreboard:hover {
-            background-color: rgba(57, 255, 20, 0.1);
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
-        }
-    </style>
+    .btn-scoreboard {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        color: #00d4ff;
+        text-decoration: none;
+        border: 1px solid #00d4ff;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+
+    .btn-scoreboard:hover {
+        background-color: rgba(0, 212, 255, 0.1);
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    }
+</style>
 </head>
 <body>
 
 <a href="/auth/logout" class="btn-signout">DÉCONNEXION [X]</a>
 
 <header>
-    <h1 style="color: #39ff14; font-size: 2.5em;">Tableau des Missions</h1>
+    <h1 style="color: #00d4ff; font-size: 2.5em;">Tableau des Missions</h1>
     <p>Identité confirmée. Choisi ta cible, agent.</p>
     <a href="/scoreboard" class="btn-scoreboard">CONSULTER LE CLASSEMENT</a>
 </header>

@@ -4,190 +4,209 @@
     <meta charset="UTF-8">
     <title><?= $challenge['title'] ?> - Terminal</title>
     <style>
-        :root {
-            --neon-green: #39ff14;
-            --dark-bg: #0d1117;
-            --panel-bg: rgba(22, 27, 34, 0.9);
-            --border-color: #30363d;
-            --error-red: #ff4d4d;
-            --hint-orange: #d97706;
-        }
+    :root {
+        --neon-blue: #00d4ff;
+        --dark-bg: #050a14;
+        --panel-bg: rgba(13, 22, 36, 0.95);
+        --border-color: #1e3a5f;
+        --error-red: #ff4d4d;
+        --hint-purple: #a855f7; /* Changed orange to purple for better blue harmony */
+        --success-blue: #0088ff;
+    }
 
-        body {
-            margin: 0;
-            background-color: var(--dark-bg);
-            color: #e6edf3;
-            font-family: 'Consolas', monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-image: radial-gradient(circle at center, #1a202c 0%, #0d1117 100%);
-        }
+    body {
+        margin: 0;
+        background-color: var(--dark-bg);
+        color: #e0f2ff;
+        font-family: 'Consolas', monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        /* Updated gradient to deep navy */
+        background-image: radial-gradient(circle at center, #0a192f 0%, #050a14 100%);
+    }
 
-        .back-nav {
-            position: fixed;
-            top: 30px;
-            left: 30px;
-            color: #8b949e;
-            text-decoration: none;
-            font-size: 0.8rem;
-            border: 1px solid #30363d;
-            padding: 8px 15px;
-            transition: all 0.3s;
-        }
+    .back-nav {
+        position: fixed;
+        top: 30px;
+        left: 30px;
+        color: #5c7b99;
+        text-decoration: none;
+        font-size: 0.8rem;
+        border: 1px solid var(--border-color);
+        padding: 8px 15px;
+        transition: all 0.3s;
+    }
 
-        .back-nav:hover {
-            color: var(--neon-green);
-            border-color: var(--neon-green);
-        }
+    .back-nav:hover {
+        color: var(--neon-blue);
+        border-color: var(--neon-blue);
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+    }
 
-        .container {
-            max-width: 1000px;
-            width: 90%;
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 2px; /* Créé un effet de ligne de séparation fine */
-            background: var(--border-color);
-            border: 1px solid var(--border-color);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-        }
+    .container {
+        max-width: 1000px;
+        width: 90%;
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 2px;
+        background: var(--border-color);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+    }
 
-        /* Panneau Latéral (Visuel) */
-        .side-panel {
-            background: var(--panel-bg);
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    /* Side Panel */
+    .side-panel {
+        background: var(--panel-bg);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-        .side-panel img {
-            width: 100%;
-            border-radius: 2px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-        }
+    .side-panel img {
+        width: 100%;
+        border-radius: 2px;
+        margin-bottom: 20px;
+        border: 1px solid var(--border-color);
+    }
 
-        .badge {
-            background: rgba(57, 255, 20, 0.1);
-            color: var(--neon-green);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            border: 1px solid var(--neon-green);
-            text-transform: uppercase;
-            font-weight: bold;
-        }
+    .badge {
+        background: rgba(0, 212, 255, 0.1);
+        color: var(--neon-blue);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        border: 1px solid var(--neon-blue);
+        text-transform: uppercase;
+        font-weight: bold;
+    }
 
-        /* Panneau de Contenu */
-        .content-panel {
-            background: var(--panel-bg);
-            padding: 50px;
-        }
+    /* Content Panel */
+    .content-panel {
+        background: var(--panel-bg);
+        padding: 50px;
+    }
 
-        h1 {
-            font-size: 1.8rem;
-            margin: 0;
-            letter-spacing: 2px;
-        }
+    h1 {
+        font-size: 1.8rem;
+        margin: 0;
+        letter-spacing: 2px;
+        color: var(--neon-blue);
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    }
 
-        .points {
-            color: var(--neon-green);
-            font-size: 0.9rem;
-            margin: 10px 0 30px 0;
-            opacity: 0.8;
-        }
+    .points {
+        color: var(--neon-blue);
+        font-size: 0.9rem;
+        margin: 10px 0 30px 0;
+        opacity: 0.8;
+    }
 
-        .desc-text {
-            line-height: 1.7;
-            color: #8b949e;
-            margin-bottom: 40px;
-        }
+    .desc-text {
+        line-height: 1.7;
+        color: #8ab4d9;
+        margin-bottom: 40px;
+    }
 
-        /* Bouton Lancement Mission */
-        .btn-launch {
-            display: block;
-            text-align: center;
-            border: 1px solid var(--neon-green);
-            color: var(--neon-green);
-            text-decoration: none;
-            padding: 20px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-            margin-bottom: 40px;
-        }
+    /* Mission Launch Button */
+    .btn-launch {
+        display: block;
+        text-align: center;
+        border: 1px solid var(--neon-blue);
+        color: var(--neon-blue);
+        text-decoration: none;
+        padding: 20px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        transition: all 0.3s;
+        margin-bottom: 40px;
+    }
 
-        .btn-launch:hover {
-            background: var(--neon-green);
-            color: var(--dark-bg);
-            box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
-        }
+    .btn-launch:hover {
+        background: var(--neon-blue);
+        color: var(--dark-bg);
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    }
 
-        /* Système de Hint */
-        details {
-            margin-bottom: 40px;
-            border-left: 2px solid var(--hint-orange);
-            background: rgba(217, 119, 6, 0.05);
-        }
+    /* Hint System */
+    details {
+        margin-bottom: 40px;
+        border-left: 2px solid var(--hint-purple);
+        background: rgba(168, 85, 247, 0.05);
+    }
 
-        summary {
-            padding: 15px;
-            cursor: pointer;
-            color: var(--hint-orange);
-            font-size: 0.8rem;
-            outline: none;
-        }
+    summary {
+        padding: 15px;
+        cursor: pointer;
+        color: var(--hint-purple);
+        font-size: 0.8rem;
+        outline: none;
+    }
 
-        .hint-content {
-            padding: 0 15px 15px 15px;
-            font-size: 0.85rem;
-            color: #d1d5db;
-        }
+    .hint-content {
+        padding: 0 15px 15px 15px;
+        font-size: 0.85rem;
+        color: #cbd5e1;
+    }
 
-        /* Formulaire de Validation */
-        .flag-zone {
-            border-top: 1px solid var(--border-color);
-            padding-top: 30px;
-        }
+    /* Validation Form */
+    .flag-zone {
+        border-top: 1px solid var(--border-color);
+        padding-top: 30px;
+    }
 
-        input[type="text"] {
-            width: 100%;
-            background: #0d1117;
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            color: var(--neon-green);
-            font-family: 'Consolas', monospace;
-            box-sizing: border-box;
-            margin-bottom: 15px;
-            outline: none;
-        }
+    input[type="text"] {
+        width: 100%;
+        background: #050a14;
+        border: 1px solid var(--border-color);
+        padding: 15px;
+        color: var(--neon-blue);
+        font-family: 'Consolas', monospace;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        outline: none;
+    }
 
-        .btn-validate {
-            width: 100%;
-            background: #238636;
-            color: white;
-            border: none;
-            padding: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
+    input[type="text"]:focus {
+        border-color: var(--neon-blue);
+    }
 
-        .btn-validate:hover { background: #2ea043; }
+    .btn-validate {
+        width: 100%;
+        background: #1d4ed8; /* Stronger blue for validation */
+        color: white;
+        border: none;
+        padding: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: background 0.3s;
+    }
 
-        .status-msg {
-            margin-top: 15px;
-            font-size: 0.8rem;
-            padding: 10px;
-            text-align: center;
-        }
+    .btn-validate:hover { 
+        background: #2563eb; 
+    }
 
-        .status-error { color: var(--error-red); border: 1px solid var(--error-red); }
-        .status-success { color: var(--neon-green); border: 1px solid var(--neon-green); }
+    .status-msg {
+        margin-top: 15px;
+        font-size: 0.8rem;
+        padding: 10px;
+        text-align: center;
+    }
 
-    </style>
+    .status-error { 
+        color: var(--error-red); 
+        border: 1px solid var(--error-red); 
+    }
+    
+    .status-success { 
+        color: var(--neon-blue); 
+        border: 1px solid var(--neon-blue); 
+        background: rgba(0, 212, 255, 0.05);
+    }
+</style>
 </head>
 <body>
 

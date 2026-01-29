@@ -185,7 +185,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="hidden" name="action" value="check_questions">
                 <label style="font-size:0.7em; display:block; text-align:left;">Nom de votre premier chat ?</label>
                 <input type="text" name="q1" placeholder="Réponse 1" required>
-                <label style="font-size:0.7em; display:block; text-align:left;">Ville de votre diplôme ?</label>
+                <label style="font-size:0.7em; display:block; text-align:left;">Ville de votre diplôme de master?</label>
                 <input type="text" name="q2" placeholder="Réponse 2" required>
                 <label style="font-size:0.7em; display:block; text-align:left;">Année de naissance (4 chiffres) ?</label>
                 <input type="text" name="q3" placeholder="Réponse 3" required>

@@ -116,13 +116,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form method="POST">
                 <input type="hidden" name="action" value="check_questions">
                 <label style="font-size:0.7em; display:block; text-align:left;">Dernière ville où elle était ?</label>
-                <input type="text" name="q1" placeholder="Ex: Limoges" required>
+                <input type="text" name="q1" placeholder="Ex: Limoges" autocomplete="off" required>
                 
                 <label style="font-size:0.7em; display:block; text-align:left;">Nom de la place/monument ?</label>
-                <input type="text" name="q2" placeholder="Nom du lieu en français" required>
+                <input type="text" name="q2" placeholder="Nom du lieu en français" autocomplete="off" required>
                 
                 <label style="font-size:0.7em; display:block; text-align:left;">Qui est honoré par ce monument ?</label>
-                <input type="text" name="q3" placeholder="Nom complet" required>
+                <input type="text" name="q3" placeholder="Nom complet" autocomplete="off" required>
                 
                 <button type="submit">Valider les informations</button>
             </form>

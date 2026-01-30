@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $q2 = strtolower(trim($_POST['q2']));
         $q3 = trim($_POST['q3']);
 
-        if ($q1 === 'mistigri' && $q2 === 'bordeaux' && $q3 === '1985') {
+        if (strtolower($q1) === 'mistigri' && strtolower($q2) === 'bordeaux' && strtolower($q3) === '1985') {
             $step = "success";
         } else {
             $step = "forgot";
